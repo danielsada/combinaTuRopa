@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05F65821E80760F009E886E /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65811E80760F009E886E /* AKPickerView.swift */; };
+		D05F65841E807664009E886E /* AKWoman.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65831E807664009E886E /* AKWoman.swift */; };
+		D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087A4151E8086B700C0F9A9 /* AKMan.swift */; };
 		E2404D431E510B35008C29B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2404D421E510B35008C29B9 /* AppDelegate.swift */; };
 		E2404D451E510B35008C29B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2404D441E510B35008C29B9 /* ViewController.swift */; };
 		E2404D481E510B35008C29B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2404D461E510B35008C29B9 /* Main.storyboard */; };
@@ -15,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D05F65801E80760F009E886E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
+		D05F65811E80760F009E886E /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
+		D05F65831E807664009E886E /* AKWoman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKWoman.swift; sourceTree = "<group>"; };
+		D087A4151E8086B700C0F9A9 /* AKMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMan.swift; sourceTree = "<group>"; };
 		E2404D3F1E510B35008C29B9 /* combinaTuRopa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = combinaTuRopa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2404D421E510B35008C29B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2404D441E510B35008C29B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +42,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D05F657F1E807602009E886E /* AKPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D05F65801E80760F009E886E /* AKPickerView.h */,
+				D05F65811E80760F009E886E /* AKPickerView.swift */,
+				D05F65831E807664009E886E /* AKWoman.swift */,
+				D087A4151E8086B700C0F9A9 /* AKMan.swift */,
+			);
+			name = AKPickerView;
+			sourceTree = "<group>";
+		};
 		E2404D361E510B35008C29B9 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +72,7 @@
 		E2404D411E510B35008C29B9 /* combinaTuRopa */ = {
 			isa = PBXGroup;
 			children = (
+				D05F657F1E807602009E886E /* AKPickerView */,
 				E2404D421E510B35008C29B9 /* AppDelegate.swift */,
 				E2404D441E510B35008C29B9 /* ViewController.swift */,
 				E2404D461E510B35008C29B9 /* Main.storyboard */,
@@ -96,6 +115,7 @@
 				TargetAttributes = {
 					E2404D3E1E510B35008C29B9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 57638P7TDE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +158,9 @@
 			files = (
 				E2404D451E510B35008C29B9 /* ViewController.swift in Sources */,
 				E2404D431E510B35008C29B9 /* AppDelegate.swift in Sources */,
+				D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */,
+				D05F65841E807664009E886E /* AKWoman.swift in Sources */,
+				D05F65821E80760F009E886E /* AKPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 57638P7TDE;
 				INFOPLIST_FILE = combinaTuRopa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = team4.itesm.mx.combinaTuRopa;
@@ -273,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 57638P7TDE;
 				INFOPLIST_FILE = combinaTuRopa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = team4.itesm.mx.combinaTuRopa;
