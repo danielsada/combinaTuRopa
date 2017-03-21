@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */; };
 		D05F65821E80760F009E886E /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65811E80760F009E886E /* AKPickerView.swift */; };
 		D05F65841E807664009E886E /* AKWoman.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65831E807664009E886E /* AKWoman.swift */; };
 		D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087A4151E8086B700C0F9A9 /* AKMan.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSeleccionHM.swift; sourceTree = "<group>"; };
 		D05F65801E80760F009E886E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
 		D05F65811E80760F009E886E /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		D05F65831E807664009E886E /* AKWoman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKWoman.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				E2404D491E510B35008C29B9 /* Assets.xcassets */,
 				E2404D4B1E510B35008C29B9 /* LaunchScreen.storyboard */,
 				E2404D4E1E510B35008C29B9 /* Info.plist */,
+				0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */,
 			);
 			path = combinaTuRopa;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				E2404D451E510B35008C29B9 /* ViewController.swift in Sources */,
 				E2404D431E510B35008C29B9 /* AppDelegate.swift in Sources */,
 				D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */,
+				0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */,
 				D05F65841E807664009E886E /* AKWoman.swift in Sources */,
 				D05F65821E80760F009E886E /* AKPickerView.swift in Sources */,
 			);
