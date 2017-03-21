@@ -16,7 +16,7 @@ class ViewControllerSeleccionHM: UIViewController{
         let bounds = button.bounds
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 30, options: .curveEaseInOut, animations: {
-            button.bounds = CGRect(x: bounds.origin.x - 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 15)
+            button.bounds = CGRect(x: bounds.origin.x - 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 20)
         }) { (success:Bool) in
             if success == true {
                 UIView.animate(withDuration: 0.5, animations: {
@@ -34,7 +34,7 @@ class ViewControllerSeleccionHM: UIViewController{
         let bounds = button.bounds
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 30, options: .curveEaseInOut, animations: {
-            button.bounds = CGRect(x: bounds.origin.x + 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 15)
+            button.bounds = CGRect(x: bounds.origin.x + 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 20)
         }) { (success:Bool) in
             if success == true {
                 UIView.animate(withDuration: 0.5, animations: { 

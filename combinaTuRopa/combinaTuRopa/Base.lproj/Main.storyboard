@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hombremujer" translatesAutoresizingMaskIntoConstraints="NO" id="i8Q-At-tko">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hombremujer" translatesAutoresizingMaskIntoConstraints="NO" id="i8Q-At-tko">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J0-Ol-wqs">
@@ -130,9 +130,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hombre" translatesAutoresizingMaskIntoConstraints="NO" id="PXB-zc-vYH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="654"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hombre" translatesAutoresizingMaskIntoConstraints="NO" id="PXB-zc-vYH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAy-IZ-pY7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
                                 <rect key="frame" x="16" y="179" width="343" height="168"/>
@@ -204,8 +203,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PXB-zc-vYH" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" id="83A-wG-fYw"/>
+                            <constraint firstAttribute="trailing" secondItem="PXB-zc-vYH" secondAttribute="trailing" id="BRi-d8-gJg"/>
+                            <constraint firstItem="PXB-zc-vYH" firstAttribute="top" secondItem="wo7-Pr-mDl" secondAttribute="top" id="Vpe-Te-I31"/>
                             <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="lY0-2F-oew" secondAttribute="bottom" constant="20" id="Zal-lr-fwP"/>
                             <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="pNc-uo-aBy" secondAttribute="bottom" constant="20" id="cHc-hy-avJ"/>
+                            <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="PXB-zc-vYH" secondAttribute="bottom" id="dI6-hg-H6g"/>
                             <constraint firstItem="lY0-2F-oew" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leadingMargin" id="xS2-L3-aeh"/>
                             <constraint firstItem="pNc-uo-aBy" firstAttribute="trailing" secondItem="wo7-Pr-mDl" secondAttribute="trailingMargin" id="xn8-B7-4XP"/>
                         </constraints>
@@ -216,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF7-Sa-jtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="572.56371814092961"/>
+            <point key="canvasLocation" x="3234.7826086956525" y="572.28260869565224"/>
         </scene>
         <!--Encuentra tu tienda mas cercana-->
         <scene sceneID="tC4-n9-2Vl">
@@ -307,9 +310,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mujer" translatesAutoresizingMaskIntoConstraints="NO" id="jSJ-4x-A9W">
-                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mujer" translatesAutoresizingMaskIntoConstraints="NO" id="jSJ-4x-A9W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faa-xr-zJp">
                                 <rect key="frame" x="334" y="661" width="60" height="55"/>
@@ -382,8 +384,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Faa-xr-zJp" firstAttribute="trailing" secondItem="0dn-w7-kfz" secondAttribute="trailingMargin" id="3hZ-Bh-s42"/>
+                            <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="77C-FW-hQF"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="Faa-xr-zJp" secondAttribute="bottom" constant="20" id="CHF-R3-CQD"/>
+                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="DBE-Gk-KBy"/>
+                            <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="Evo-3y-4E4"/>
                             <constraint firstItem="4RA-fI-mSO" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leadingMargin" id="GwA-v0-xYI"/>
+                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="iyi-py-vhK"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="4RA-fI-mSO" secondAttribute="bottom" constant="20" id="xYY-fl-0tH"/>
                         </constraints>
                     </view>
@@ -393,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgk-vX-GzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3252" y="-313.49325337331339"/>
+            <point key="canvasLocation" x="3250.7246376811595" y="-313.85869565217394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="y9R-DZ-moj">
@@ -457,6 +463,6 @@
         <image name="mujer" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oRC-SG-3AU"/>
+        <segue reference="zaj-cM-Xh4"/>
     </inferredMetricsTieBreakers>
 </document>
