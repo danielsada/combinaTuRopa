@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -189,7 +189,7 @@
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
                                     <action selector="buttonShop:" destination="uCV-kj-rx4" eventType="touchUpInside" id="wVk-cP-gIq"/>
-                                    <segue destination="A8T-Pr-wXM" kind="show" id="oRC-SG-3AU"/>
+                                    <segue destination="fsf-pm-RJf" kind="show" id="Heb-W5-LTp"/>
                                 </connections>
                             </button>
                             <view opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-ne-qXL" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
@@ -225,69 +225,41 @@
             </objects>
             <point key="canvasLocation" x="3234.7826086956525" y="572.28260869565224"/>
         </scene>
-        <!--Encuentra tu tienda mas cercana-->
-        <scene sceneID="tC4-n9-2Vl">
+        <!--View Controller Tiendas-->
+        <scene sceneID="96p-vH-7RX">
             <objects>
-                <viewController id="A8T-Pr-wXM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f2a-6A-fpr"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rlk-z4-F9t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UC0-HW-eqm">
+                <tableViewController id="fsf-pm-RJf" customClass="ViewControllerTiendas" customModule="combinaTuRopa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dxk-fh-Uau">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-1G-Mgv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="427"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kyS-Vs-Czj" detailTextLabel="xMg-VT-jMB" imageView="NYF-dZ-eBx" style="IBUITableViewCellStyleSubtitle" id="X4g-ON-xzT">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X4g-ON-xzT" id="tqe-vt-Lde">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kyS-Vs-Czj">
-                                                    <rect key="frame" x="73" y="4" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xMg-VT-jMB">
-                                                    <rect key="frame" x="73" y="25" width="33" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="cart" id="NYF-dZ-eBx">
-                                                    <rect key="frame" x="15" y="0.0" width="43" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="TXk-L3-fEb" kind="show" id="pnQ-hX-MTE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Encuentra tu tienda mas cercana" id="y3z-cN-JaV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hl-EI-n7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" id="6bd-2P-Mkh">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bd-2P-Mkh" id="T8C-aU-wDV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TXk-L3-fEb" kind="show" identifier="mapa" id="Ev3-dd-VbT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fsf-pm-RJf" id="ZsX-cl-fxk"/>
+                            <outlet property="delegate" destination="fsf-pm-RJf" id="j49-PI-WcZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRM-1Z-gve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="572.56371814092961"/>
+            <point key="canvasLocation" x="4100" y="585"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Mapa-->
         <scene sceneID="UFQ-BV-NOc">
             <objects>
-                <viewController id="TXk-L3-fEb" sceneMemberID="viewController">
+                <viewController id="TXk-L3-fEb" customClass="ViewControllerMapa" customModule="combinaTuRopa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tfu-4j-DzZ"/>
                         <viewControllerLayoutGuide type="bottom" id="8Z5-WJ-Jt9"/>
@@ -295,12 +267,35 @@
                     <view key="view" contentMode="scaleToFill" id="TEh-fh-IIC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPw-cE-DyU">
+                                <rect key="frame" x="20" y="100.33333333333331" width="374" height="615.66666666666674"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIENDA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpx-QP-cHA">
+                                <rect key="frame" x="20" y="72" width="374" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fpx-QP-cHA" firstAttribute="leading" secondItem="TEh-fh-IIC" secondAttribute="leadingMargin" id="34W-rw-Cp0"/>
+                            <constraint firstItem="8Z5-WJ-Jt9" firstAttribute="top" secondItem="zPw-cE-DyU" secondAttribute="bottom" constant="20" id="8dT-Ed-YZe"/>
+                            <constraint firstItem="zPw-cE-DyU" firstAttribute="leading" secondItem="TEh-fh-IIC" secondAttribute="leadingMargin" id="Viy-4K-YzS"/>
+                            <constraint firstItem="fpx-QP-cHA" firstAttribute="trailing" secondItem="TEh-fh-IIC" secondAttribute="trailingMargin" id="XoQ-Be-zT9"/>
+                            <constraint firstItem="fpx-QP-cHA" firstAttribute="top" secondItem="Tfu-4j-DzZ" secondAttribute="bottom" constant="8" id="YE6-W9-Vsl"/>
+                            <constraint firstItem="zPw-cE-DyU" firstAttribute="top" secondItem="fpx-QP-cHA" secondAttribute="bottom" constant="8" id="mdd-rX-CNL"/>
+                            <constraint firstItem="zPw-cE-DyU" firstAttribute="trailing" secondItem="TEh-fh-IIC" secondAttribute="trailingMargin" id="nHP-l4-oJw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagenMapa" destination="zPw-cE-DyU" id="Y47-Cy-RtQ"/>
+                        <outlet property="tiendaLabel" destination="fpx-QP-cHA" id="cNl-1j-POG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPw-yp-Y9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5004" y="572.56371814092961"/>
+            <point key="canvasLocation" x="5002.898550724638" y="584.51086956521749"/>
         </scene>
         <!--Woman-->
         <scene sceneID="tJy-Pc-9yW">
@@ -337,7 +332,7 @@
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
                                     <action selector="buttonShop:" destination="Qbk-1e-XOz" eventType="touchUpInside" id="VhX-nH-iV9"/>
-                                    <segue destination="A8T-Pr-wXM" kind="show" id="zaj-cM-Xh4"/>
+                                    <segue destination="fsf-pm-RJf" kind="show" id="147-Z0-Liq"/>
                                 </connections>
                             </button>
                             <view opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
@@ -463,7 +458,6 @@
     <resources>
         <image name="camara" width="100" height="100"/>
         <image name="camarablanca" width="100" height="100"/>
-        <image name="cart" width="100" height="100"/>
         <image name="cartblanca" width="100" height="100"/>
         <image name="fondoLaunch" width="3680" height="2456"/>
         <image name="hombre" width="621" height="1104"/>
@@ -471,6 +465,6 @@
         <image name="mujer" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zaj-cM-Xh4"/>
+        <segue reference="147-Z0-Liq"/>
     </inferredMetricsTieBreakers>
 </document>

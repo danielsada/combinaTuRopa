@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */; };
+		77DAF1A81E82F33A00668EE4 /* ViewControllerTiendas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */; };
+		77DAF1AB1E82F84F00668EE4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAF1AA1E82F84F00668EE4 /* CoreLocation.framework */; };
+		77DAF1AD1E82F94200668EE4 /* ViewControllerMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAF1AC1E82F94200668EE4 /* ViewControllerMapa.swift */; };
 		D05F65821E80760F009E886E /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65811E80760F009E886E /* AKPickerView.swift */; };
 		D05F65841E807664009E886E /* AKWoman.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F65831E807664009E886E /* AKWoman.swift */; };
 		D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087A4151E8086B700C0F9A9 /* AKMan.swift */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSeleccionHM.swift; sourceTree = "<group>"; };
+		77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTiendas.swift; sourceTree = "<group>"; };
+		77DAF1AA1E82F84F00668EE4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		77DAF1AC1E82F94200668EE4 /* ViewControllerMapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMapa.swift; sourceTree = "<group>"; };
 		D05F65801E80760F009E886E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
 		D05F65811E80760F009E886E /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		D05F65831E807664009E886E /* AKWoman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKWoman.swift; sourceTree = "<group>"; };
@@ -38,12 +44,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DAF1AB1E82F84F00668EE4 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77DAF1A91E82F84F00668EE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77DAF1AA1E82F84F00668EE4 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D05F657F1E807602009E886E /* AKPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +75,7 @@
 			children = (
 				E2404D411E510B35008C29B9 /* combinaTuRopa */,
 				E2404D401E510B35008C29B9 /* Products */,
+				77DAF1A91E82F84F00668EE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,8 @@
 				E2404D4B1E510B35008C29B9 /* LaunchScreen.storyboard */,
 				E2404D4E1E510B35008C29B9 /* Info.plist */,
 				0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */,
+				77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */,
+				77DAF1AC1E82F94200668EE4 /* ViewControllerMapa.swift */,
 			);
 			path = combinaTuRopa;
 			sourceTree = "<group>";
@@ -160,10 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2404D451E510B35008C29B9 /* ViewController.swift in Sources */,
+				77DAF1AD1E82F94200668EE4 /* ViewControllerMapa.swift in Sources */,
 				E2404D431E510B35008C29B9 /* AppDelegate.swift in Sources */,
 				D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */,
 				0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */,
 				D05F65841E807664009E886E /* AKWoman.swift in Sources */,
+				77DAF1A81E82F33A00668EE4 /* ViewControllerTiendas.swift in Sources */,
 				D05F65821E80760F009E886E /* AKPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
