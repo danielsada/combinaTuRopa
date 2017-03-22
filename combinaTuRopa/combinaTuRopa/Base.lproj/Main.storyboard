@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="81"/>
+            <point key="canvasLocation" x="206" y="0.0"/>
         </scene>
         <!--View Controller SeleccionHM-->
         <scene sceneID="lq8-nO-ZkR">
@@ -87,7 +87,7 @@
                                     <segue destination="uCV-kj-rx4" kind="show" id="x82-Nq-cji"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-Ej-yqs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAa-Ej-yqs">
                                 <rect key="frame" x="16" y="123" width="125" height="57"/>
                                 <color key="backgroundColor" red="0.070096425712108612" green="0.076433800160884857" blue="0.021162401884794235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
@@ -108,8 +108,8 @@
                             <constraint firstItem="Tmn-GI-eU0" firstAttribute="top" secondItem="i8Q-At-tko" secondAttribute="bottom" id="EWD-cD-YJw"/>
                             <constraint firstAttribute="trailing" secondItem="2J0-Ol-wqs" secondAttribute="trailing" id="HEe-if-Xpw"/>
                             <constraint firstAttribute="trailing" secondItem="i8Q-At-tko" secondAttribute="trailing" id="LVo-pg-yag"/>
-                            <constraint firstItem="nAa-Ej-yqs" firstAttribute="leading" secondItem="PgS-jp-hcs" secondAttribute="leading" constant="6" id="NfJ-qY-nOC"/>
-                            <constraint firstItem="nAa-Ej-yqs" firstAttribute="top" secondItem="XHt-Yo-3C0" secondAttribute="bottom" constant="60" id="b6Y-Vg-7MA"/>
+                            <constraint firstItem="nAa-Ej-yqs" firstAttribute="leading" secondItem="PgS-jp-hcs" secondAttribute="leading" constant="16" id="NfJ-qY-nOC"/>
+                            <constraint firstItem="nAa-Ej-yqs" firstAttribute="top" secondItem="XHt-Yo-3C0" secondAttribute="bottom" constant="59" id="b6Y-Vg-7MA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L8k-A9-QuY"/>
@@ -176,6 +176,9 @@
                                     <constraint firstAttribute="height" constant="55" id="gyM-gt-VoW"/>
                                 </constraints>
                                 <state key="normal" image="camarablanca"/>
+                                <connections>
+                                    <action selector="buttonCamara:" destination="uCV-kj-rx4" eventType="touchUpInside" id="Hp4-sS-JcM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY0-2F-oew">
                                 <rect key="frame" x="20" y="661" width="60" height="55"/>
@@ -185,6 +188,7 @@
                                 </constraints>
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
+                                    <action selector="buttonShop:" destination="uCV-kj-rx4" eventType="touchUpInside" id="wVk-cP-gIq"/>
                                     <segue destination="A8T-Pr-wXM" kind="show" id="oRC-SG-3AU"/>
                                 </connections>
                             </button>
@@ -242,25 +246,25 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X4g-ON-xzT" id="tqe-vt-Lde">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kyS-Vs-Czj">
-                                                    <rect key="frame" x="74" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="73" y="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xMg-VT-jMB">
-                                                    <rect key="frame" x="74" y="25.333333333333332" width="32.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="73" y="25" width="33" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="cart" id="NYF-dZ-eBx">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="43" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -320,6 +324,9 @@
                                     <constraint firstAttribute="width" constant="60" id="fRo-WG-k2V"/>
                                 </constraints>
                                 <state key="normal" image="camarablanca"/>
+                                <connections>
+                                    <action selector="bottonCamara:" destination="Qbk-1e-XOz" eventType="touchUpInside" id="SUa-ZL-9QS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RA-fI-mSO">
                                 <rect key="frame" x="20" y="661" width="60" height="55"/>
@@ -329,6 +336,7 @@
                                 </constraints>
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
+                                    <action selector="buttonShop:" destination="Qbk-1e-XOz" eventType="touchUpInside" id="VhX-nH-iV9"/>
                                     <segue destination="A8T-Pr-wXM" kind="show" id="zaj-cM-Xh4"/>
                                 </connections>
                             </button>
@@ -413,8 +421,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-2f-xO7">
-                                <rect key="frame" x="168" y="353" width="60" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-2f-xO7">
+                                <rect key="frame" x="177" y="340.66666666666669" width="60" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="x9J-ls-3FQ"/>
                                     <constraint firstAttribute="height" constant="55" id="ySH-FZ-9pR"/>

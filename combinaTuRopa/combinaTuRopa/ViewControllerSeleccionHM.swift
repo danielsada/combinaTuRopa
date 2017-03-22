@@ -46,6 +46,9 @@ class ViewControllerSeleccionHM: UIViewController{
 
     }
     
+    //Only portrait
+ 
+    
     
     
 }

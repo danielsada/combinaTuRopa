@@ -11,6 +11,39 @@ import UIKit
 
 class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
+    //Boton Carrito
+    @IBAction func buttonShop(_ sender: Any) {
+        let button = sender as! UIButton
+        let bounds = button.bounds
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            button.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width : bounds.size.width + 50, height: bounds.size.height + 15)
+        }) { (success:Bool) in
+            if success == true {
+                UIView.animate(withDuration: 0.3, animations: {
+                    button.bounds = bounds
+                })
+            }
+        }
+    }
+    
+    //Boton Camara
+    @IBAction func bottonCamara(_ sender: Any) {
+        let button = sender as! UIButton
+        let bounds = button.bounds
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            button.bounds = CGRect(x: bounds.origin.x + 20, y: bounds.origin.y, width : bounds.size.width + 5, height: bounds.size.height + 5 )
+        }) { (success:Bool) in
+            if success == true {
+                UIView.animate(withDuration: 0.3, animations: {
+                    button.bounds = bounds
+                })
+            }
+        }
+    }
+    
+    
     var titles = ["Swimming","prueba"]
     
     @IBOutlet weak var pickerView: AKPickerView!
