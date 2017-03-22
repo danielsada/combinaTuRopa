@@ -43,14 +43,21 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
     }
     
+    @IBOutlet weak var pickerViewCuerpo: AKPickerView!
     
-    var titles = ["Swimming","prueba","HatPink"]
+    @IBOutlet weak var pickerViewPiernas: AKPickerView!
+    var titles = ["prueba","somb160","somb260"]
+    var camisas = ["blusa260","blusa160"]
     
     @IBOutlet weak var pickerView: AKPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        self.pickerViewCuerpo.delegate = self
+        self.pickerViewCuerpo.dataSource = self
+        self.pickerViewPiernas.delegate = self
+        self.pickerViewPiernas.dataSource = self
         
        
         self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
@@ -65,6 +72,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
         if pickerView.tag == 1{
             return self.titles.count
+        }
+        if pickerView.tag == 2{
+            return self.camisas.count
         }
         return 0
     }
@@ -82,6 +92,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     func pickerView(_ pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
         if pickerView.tag == 1{
             return UIImage(named: self.titles[item])!
+        }
+        if pickerView.tag == 2{
+            return UIImage(named: self.camisas[item])!
         }
         return UIImage(named: "hombre")!
     }

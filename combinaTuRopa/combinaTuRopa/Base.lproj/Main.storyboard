@@ -134,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAy-IZ-pY7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="179" width="343" height="168"/>
+                                <rect key="frame" x="20" y="183" width="374" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
@@ -146,7 +146,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUy-bM-47b" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="355" width="343" height="178"/>
+                                <rect key="frame" x="20" y="365" width="374" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
@@ -192,8 +192,8 @@
                                     <segue destination="fsf-pm-RJf" kind="show" id="Heb-W5-LTp"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-ne-qXL" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="343" height="57"/>
+                            <view opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-ne-qXL" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="36" y="72" width="343" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
@@ -219,6 +219,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="ZP0-ne-qXL" id="fUq-Pq-qb8"/>
+                        <outlet property="pickerViewCuerpo" destination="qAy-IZ-pY7" id="ZzL-AE-K7t"/>
+                        <outlet property="pickerViewPiernas" destination="dUy-bM-47b" id="roZ-iK-5YN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF7-Sa-jtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bd-2P-Mkh" id="T8C-aU-wDV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -335,20 +337,8 @@
                                     <segue destination="fsf-pm-RJf" kind="show" id="147-Z0-Liq"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
-                                        <real key="value" value="1000"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-BM-Do7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="170" width="343" height="139"/>
+                            <view opaque="NO" tag="1" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="36" y="72" width="343" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
@@ -383,6 +373,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-BM-Do7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="36" y="180" width="343" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
+                                        <real key="value" value="1000"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -398,6 +400,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="aZP-0J-ucN" id="hcv-1n-PTW"/>
+                        <outlet property="pickerViewCuerpo" destination="aAj-BM-Do7" id="Uip-gl-4Ze"/>
+                        <outlet property="pickerViewPiernas" destination="eqd-hQ-7CK" id="vcS-gn-C2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgk-vX-GzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,6 +469,6 @@
         <image name="mujer" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="147-Z0-Liq"/>
+        <segue reference="Heb-W5-LTp"/>
     </inferredMetricsTieBreakers>
 </document>
