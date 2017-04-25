@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 
 
-class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate{
+class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate,URLSessionDownloadDelegate{
     var tienda = ""
     var dir = ""
     let arrTiendas = ["Suburbia", "Zara", "Liverpool", "C&A", "Palacio de Hierro", "Nike", "Adidas", "Privalia", "Flexi", "Pirma"]
@@ -42,6 +42,8 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         /***/
         mapa.addAnnotation(annotation)
         /**/
+        
+        descargarJsonTiendas()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -109,6 +111,56 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         //Tamaño inicial del mapa
         
     }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        if error != nil {
+            print("Error al descargar... \(error.debugDescription)")
+        }
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        let avance = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
+        
+    }
+    
+    func descargarJsonTiendas(){
+        let dir = "https://combinaturopa.stamplayapp.com/api/cobject/v1/stores"
+        if let url = URL(string: dir) {
+            let config = URLSessionConfiguration.default
+            let sesion = URLSession(configuration: config, delegate: self, delegateQueue: nil)
+            let tareaTexto = sesion.downloadTask(with: url)
+            tareaTexto.resume()
+        }
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        do {
+            let datos = try Data.init(contentsOf: location, options: .alwaysMapped)
+            let respuesta = downloadTask.response as! HTTPURLResponse
+            if (respuesta.statusCode == 200) {
+                parsearJson(datos: datos)
+            } else {
+                print("Error en la descarga: \(respuesta.statusCode)") }
+        } catch {
+        } }
+
+    
+    func parsearJson(datos: Data){
+        if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
+            
+            if json["data"] != nil{
+                let items = json["data"] as! [[String:Any]]
+                for data in items{
+                    print(data)
+                }
+            }
+            else{
+                print("No se encontró ISBN")
+            }
+        }
+        
+    }
+
     
     
     /*
