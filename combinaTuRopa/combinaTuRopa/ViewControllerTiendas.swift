@@ -33,12 +33,12 @@ class ViewControllerTiendas: UITableViewController{
         celda.detailTextLabel?.text = arrDirecciones[indexPath.row]
         return celda
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*let segundoControlador = segue.destination as! ViewControllerMapa
+        let segundoControlador = segue.destination as! ViewControllerMapa
         dir = arrDirecciones[(table.indexPathForSelectedRow?.row)!]
-        segundoControlador.dir = dir*/
-        
+        segundoControlador.dir = dir
+ 
         if segue.identifier == "mapa" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = arrDirecciones[indexPath.row]
@@ -47,4 +47,5 @@ class ViewControllerTiendas: UITableViewController{
             }
         }
     }
+ */
 }

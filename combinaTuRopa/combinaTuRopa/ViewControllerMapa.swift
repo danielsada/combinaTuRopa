@@ -8,21 +8,40 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
-class ViewControllerMapa: UIViewController, CLLocationManagerDelegate{
+
+class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate{
     var tienda = ""
-    
     var dir = ""
+    let arrTiendas = ["Suburbia", "Zara", "Liverpool", "C&A", "Palacio de Hierro", "Nike", "Adidas", "Privalia", "Flexi", "Pirma"]
+    let gps = CLLocationManager()
+    var posicion = CLLocation()
+    let annotation = MKPointAnnotation()
+    
+
+    let arrDirecciones = ["Av El Rosario No.1025, Azcapotzalco, El Rosario, 02430 Ciudad de México, CDMX","Av. Ruiz cortunes No. 255, Col. las margaritas, 52977 Mexico, Méx.","Plaza Las Galerias Atizapan, Av Adolfo Ruiz Cortines 255, Margaritas, 52977 Cd López Mateos, Méx.","Forum Buenavista Centro Comercial, Eje 1 Nte. 259, Buenavista, 06350 Ciudad de México, CDMX","Plaza Satélite, Cto Centro Comercial 2251, Cd. Satélite, 53100 Naucalpan de Juárez, Méx.","Calz. Vallejo 1051A, Lindavista Vallejo III Secc, 07750 Ciudad de México, CDMX","Enrique Bricker Plaza Galerías Atizapan, Av. Adolfo Ruiz Cortines 255, Mexico Nuevo, 52977 Cd López Mateos, Méx.","Colonia San Miguel Chapultepec Delegación Miguel Hidalgo, México, D.F.","Parque Lindavista, Colector 13, 280, Gustavo A.Madero, Magdalena de las Salinas, 07760 Ciudad de México, CDMX","Carretera Lago De Guadalupe, Av Lago de Guadalupe s/n, San Pedro Barrientos, 54010 Tlalnepantla, Méx."]
+    
+
     
     let direcciones: ViewControllerTiendas = ViewControllerTiendas()
     
     @IBOutlet weak var tiendaLabel: UILabel!
     @IBOutlet weak var imagenMapa: UIImageView!
     
+    @IBOutlet weak var mapa: MKMapView!
     override func viewDidLoad() {
+        
+        /*****/
+        annotation.title = "Hola"
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 19.5812355,longitude: -99.2163089)
+        /*****/
         super.viewDidLoad()
-        configurarGPS()
-        cargarImagen()
+        configurarMapa()
+        
+        /***/
+        mapa.addAnnotation(annotation)
+        /**/
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -31,30 +50,68 @@ class ViewControllerMapa: UIViewController, CLLocationManagerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-    // *** Configurar GPS *** \\
-        private let admGps = CLLocationManager() //ADMINISTRADOR DE LOCALIZACIÓN\\
-        var posicion = CLLocation()  //Mandamos construir la posicion
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrTiendas.count
+    }
     
-        private func configurarGPS() {
-            admGps.delegate = self // El delegado es este controlador
-            admGps.desiredAccuracy = kCLLocationAccuracyBest // La mayor precisión
-            admGps.requestWhenInUseAuthorization() // Pide permiso al usuario
-        }
+    /*func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+     <#code#>
+     }*/
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celda = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+        celda.textLabel?.text = arrTiendas[indexPath.row]
+        celda.detailTextLabel?.font = UIFont.italicSystemFont(ofSize: 11.0)
+        celda.detailTextLabel?.text = arrDirecciones[indexPath.row]
+        return celda
+    }
+    
+    
+    private func configurarMapa(){
+        mapa.delegate = self
+        gps.delegate = self
+        gps.desiredAccuracy = kCLLocationAccuracyBest
+        gps.requestWhenInUseAuthorization()
+        let centro = CLLocationCoordinate2DMake(posicion.coordinate.latitude, posicion.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegionMake(centro, span)
+        mapa.region = region
+    }
+    
+     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        let posicion = userLocation.location!
+        mapa.setCenter(posicion.coordinate, animated: true)
+    }
+    
+    /**/
+   
+    /**/
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("status : \(status)")
         if status == .authorizedWhenInUse{
-            admGps.startUpdatingLocation()
+            //Hay permiso, iniciar actualizaciones
+            gps.startUpdatingLocation()
         }
-        else{
-            admGps.stopUpdatingLocation()
+        else if status == .denied{
+            gps.stopUpdatingLocation()
+            print("Puedes habilitar el gps en ajustes")
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("ERROR")
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.posicion = locations.last!
+        //Tamaño inicial del mapa
+        
     }
     
+    
+    /*
     private func cargarImagen() {
         let direccion = "https://maps.googleapis.com/maps/api/staticmap?markers=\(dir)&zoom=14&size=400x400&sensor=true"
         print(direccion)
@@ -68,7 +125,7 @@ class ViewControllerMapa: UIViewController, CLLocationManagerDelegate{
                 }
             }
         }
-    }
+    }*/
     
     
 
