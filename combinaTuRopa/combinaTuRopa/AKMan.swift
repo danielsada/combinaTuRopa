@@ -47,9 +47,9 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     
     //Nuevo Commit
-    var titles = ["Swimming","prueba","gorra60","sombreroCafe60"]
-    var camisas = ["camisa60","camisa602"]
-    var pantalones = ["jeasn160","jeasn260"]
+    var titles = ["gorra1","gorra1","gorra1"]
+    var camisas = ["playera1","playera1","playera1"]
+    var pantalones = ["pants1","pants1","pants1"]
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
     @IBOutlet weak var pickerView: AKPickerView!
