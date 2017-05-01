@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
  //Boton 
     
-    @IBAction func bounce(_ sender: Any) {
+   /* @IBAction func bounce(_ sender: Any) {
         let button = sender as! UIButton
         let bounds = button.bounds
         
@@ -22,11 +22,30 @@ class ViewController: UIViewController {
                 button.bounds = bounds
             }
         }
+    }*/
+    
+    @IBOutlet weak var button: UIButton!
+    
+    func animatedButton(){
+        button.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.20, initialSpringVelocity: 4.0, options: .allowUserInteraction, animations: {
+            self.button.transform = .identity
+        }) { (finished) in
+            self.animatedButton()
+        }
+        
+        
     }
     
+    
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        animatedButton()
+       
     }
 
     override func didReceiveMemoryWarning() {
