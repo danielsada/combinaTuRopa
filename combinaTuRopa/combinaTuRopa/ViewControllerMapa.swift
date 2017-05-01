@@ -15,42 +15,38 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     var tienda = ""
     var dir = ""
     var coordenadas = ""
-    var arrTiendas = [String]()
-    var arrCoordenadas = [String]()
-    var arrDirecciones = [String]()
+    var arrAnnotation = [MKPointAnnotation]()
     let gps = CLLocationManager()
     var posicion = CLLocation()
-    let annotation = MKPointAnnotation()
-    
-    
-
-    
     let direcciones: ViewControllerTiendas = ViewControllerTiendas()
     
     @IBOutlet weak var tiendaLabel: UILabel!
     @IBOutlet weak var imagenMapa: UIImageView!
     
     @IBOutlet weak var mapa: MKMapView!
+    
+    
+    
     override func viewDidLoad() {
         
         /*****/
-        annotation.title = "Hola"
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 19.5812355,longitude: -99.2163089)
+        descargarJsonTiendas()
         /*****/
         super.viewDidLoad()
-        configurarMapa()
         
-        /***/
-        mapa.addAnnotation(annotation)
-        /**/
-        
-        descargarJsonTiendas()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func agregarAnnotation(tienda: String, dir: String, coor: [Double]){
+        let annotation = MKPointAnnotation()
+        annotation.title = tienda
+        annotation.subtitle = dir
+        annotation.coordinate = CLLocationCoordinate2D(latitude: coor[1],longitude: coor[0])
+        arrAnnotation.append(annotation)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,16 +79,20 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegionMake(centro, span)
         mapa.region = region
+        if arrAnnotation.count == 0{
+            print("ERROR")
+        }
+        else{
+            for notation in arrAnnotation{
+                mapa.addAnnotation(notation)
+            }
+        }
     }
     
      func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let posicion = userLocation.location!
         mapa.setCenter(posicion.coordinate, animated: true)
     }
-    
-    /**/
-   
-    /**/
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("status : \(status)")
@@ -120,7 +120,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        let avance = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
+        //let avance = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
         
     }
     
@@ -147,7 +147,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     func parsearJson(datos: Data){
-        var i=0
+        var i = 0
         if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
             
             if json["data"] != nil{
@@ -155,16 +155,12 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
                 for _ in items{
                     let item = items[i]
                     let geo = item["_geolocation"] as! [String:Any]
-                    let coord = geo["coordinates"]!
-                    DispatchQueue.main.async{
-                        self.tienda = item["nombre"]! as! String
-                        self.dir = item["direccion"]! as! String
-                    }
-                    arrTiendas.append(tienda)
-                    arrCoordenadas.append("\(coord)")
-                    arrDirecciones.append(dir)
+                    let coord = geo["coordinates"] as! [Double]
                     
-                    i += 1
+                    tienda = item["nombre"]! as! String
+                    dir = item["direccion"]! as! String
+                    agregarAnnotation(tienda: tienda, dir: dir, coor: coord)
+                    i+=1
                 }
             }
             else{
@@ -173,28 +169,10 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
                 alerta.addAction(btnAceptar)
                 present(alerta, animated: true, completion: nil)
             }
-            print("Soy nombre: \(arrTiendas)")
-            print("Soy geo: \(arrCoordenadas)")
-            print("Soy dir: \(arrDirecciones)")
+            configurarMapa()
         }
         
     }
-    
-    /*
-    private func cargarImagen() {
-        let direccion = "https://maps.googleapis.com/maps/api/staticmap?markers=\(dir)&zoom=14&size=400x400&sensor=true"
-        print(direccion)
-        DispatchQueue.global().async {
-            let url = URL(string: direccion.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-            let datosImg = try? Data(contentsOf: url!)
-            // Actualizar la GUI, debe hacerlo en el thread principal
-            DispatchQueue.main.async {
-                if datosImg != nil {
-                    self.imagenMapa.image = UIImage(data: datosImg!)
-                }
-            }
-        }
-    }*/
     
     
 
