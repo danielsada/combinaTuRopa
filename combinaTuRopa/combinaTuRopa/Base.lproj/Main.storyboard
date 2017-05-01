@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -205,7 +205,7 @@
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
                                     <action selector="buttonShop:" destination="uCV-kj-rx4" eventType="touchUpInside" id="wVk-cP-gIq"/>
-                                    <segue destination="fsf-pm-RJf" kind="show" id="Heb-W5-LTp"/>
+                                    <segue destination="TXk-L3-fEb" kind="show" id="kWm-2q-qtt"/>
                                 </connections>
                             </button>
                             <view opaque="NO" tag="1" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-ne-qXL" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
@@ -274,9 +274,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="TXk-L3-fEb" kind="show" identifier="mapa" id="Ev3-dd-VbT"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -287,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRM-1Z-gve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4100" y="585"/>
+            <point key="canvasLocation" x="4862" y="-351"/>
         </scene>
         <!--View Controller Mapa-->
         <scene sceneID="UFQ-BV-NOc">
@@ -391,7 +388,7 @@
                                 <state key="normal" image="cartblanca"/>
                                 <connections>
                                     <action selector="buttonShop:" destination="Qbk-1e-XOz" eventType="touchUpInside" id="VhX-nH-iV9"/>
-                                    <segue destination="fsf-pm-RJf" kind="show" id="147-Z0-Liq"/>
+                                    <segue destination="TXk-L3-fEb" kind="show" id="RbJ-2V-2vx"/>
                                 </connections>
                             </button>
                             <view opaque="NO" tag="1" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
@@ -527,6 +524,6 @@
         <image name="mujer" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Heb-W5-LTp"/>
+        <segue reference="RbJ-2V-2vx"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,13 +14,14 @@ import MapKit
 class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate,URLSessionDownloadDelegate{
     var tienda = ""
     var dir = ""
-    let arrTiendas = ["Suburbia", "Zara", "Liverpool", "C&A", "Palacio de Hierro", "Nike", "Adidas", "Privalia", "Flexi", "Pirma"]
+    var coordenadas = ""
+    var arrTiendas = [String]()
+    var arrCoordenadas = [String]()
+    var arrDirecciones = [String]()
     let gps = CLLocationManager()
     var posicion = CLLocation()
     let annotation = MKPointAnnotation()
     
-
-    let arrDirecciones = ["Av El Rosario No.1025, Azcapotzalco, El Rosario, 02430 Ciudad de México, CDMX","Av. Ruiz cortunes No. 255, Col. las margaritas, 52977 Mexico, Méx.","Plaza Las Galerias Atizapan, Av Adolfo Ruiz Cortines 255, Margaritas, 52977 Cd López Mateos, Méx.","Forum Buenavista Centro Comercial, Eje 1 Nte. 259, Buenavista, 06350 Ciudad de México, CDMX","Plaza Satélite, Cto Centro Comercial 2251, Cd. Satélite, 53100 Naucalpan de Juárez, Méx.","Calz. Vallejo 1051A, Lindavista Vallejo III Secc, 07750 Ciudad de México, CDMX","Enrique Bricker Plaza Galerías Atizapan, Av. Adolfo Ruiz Cortines 255, Mexico Nuevo, 52977 Cd López Mateos, Méx.","Colonia San Miguel Chapultepec Delegación Miguel Hidalgo, México, D.F.","Parque Lindavista, Colector 13, 280, Gustavo A.Madero, Magdalena de las Salinas, 07760 Ciudad de México, CDMX","Carretera Lago De Guadalupe, Av Lago de Guadalupe s/n, San Pedro Barrientos, 54010 Tlalnepantla, Méx."]
     
 
     
@@ -146,22 +147,38 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     func parsearJson(datos: Data){
+        var i=0
         if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
             
             if json["data"] != nil{
                 let items = json["data"] as! [[String:Any]]
-                for data in items{
-                    print(data)
+                for _ in items{
+                    let item = items[i]
+                    let geo = item["_geolocation"] as! [String:Any]
+                    let coord = geo["coordinates"]!
+                    DispatchQueue.main.async{
+                        self.tienda = item["nombre"]! as! String
+                        self.dir = item["direccion"]! as! String
+                    }
+                    arrTiendas.append(tienda)
+                    arrCoordenadas.append("\(coord)")
+                    arrDirecciones.append(dir)
+                    
+                    i += 1
                 }
             }
             else{
-                print("No se encontró ISBN")
+                let alerta = UIAlertController(title: "Aviso", message: "NO SE ENCONTRÓ LA TIENDA.", preferredStyle: .alert)
+                let btnAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                alerta.addAction(btnAceptar)
+                present(alerta, animated: true, completion: nil)
             }
+            print("Soy nombre: \(arrTiendas)")
+            print("Soy geo: \(arrCoordenadas)")
+            print("Soy dir: \(arrDirecciones)")
         }
         
     }
-
-    
     
     /*
     private func cargarImagen() {
