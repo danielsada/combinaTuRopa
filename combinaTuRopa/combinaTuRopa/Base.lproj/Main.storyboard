@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -271,7 +271,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bd-2P-Mkh" id="T8C-aU-wDV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -321,7 +321,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57T-8M-mLL" id="zL8-MK-WJp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -369,8 +369,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mujer" translatesAutoresizingMaskIntoConstraints="NO" id="jSJ-4x-A9W">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo" translatesAutoresizingMaskIntoConstraints="NO" id="jSJ-4x-A9W">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maria" translatesAutoresizingMaskIntoConstraints="NO" id="krW-8g-rnh">
+                                <rect key="frame" x="0.0" y="62" width="375" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faa-xr-zJp">
                                 <rect key="frame" x="299" y="592" width="60" height="55"/>
@@ -395,21 +399,12 @@
                                     <segue destination="TXk-L3-fEb" kind="show" id="RbJ-2V-2vx"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" tag="1" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                            <view opaque="NO" tag="1" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-0J-ucN" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="378" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
-                                        <real key="value" value="1000"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqd-hQ-7CK" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="317" width="378" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="H6X-Th-sw3"/>
+                                    <constraint firstAttribute="width" constant="378" id="UwC-zW-Pp9"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
                                         <real key="value" value="20"/>
@@ -431,9 +426,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-BM-Do7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="180" width="378" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-BM-Do7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="11" y="199" width="375" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="UpM-lh-KqI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
+                                        <real key="value" value="1000"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqd-hQ-7CK" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="12" y="342" width="375" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="9hQ-Kb-K6c"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
                                         <real key="value" value="20"/>
@@ -446,13 +457,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aZP-0J-ucN" firstAttribute="top" secondItem="54J-NG-Wdz" secondAttribute="bottom" constant="8" id="1GM-S1-9OS"/>
+                            <constraint firstItem="aAj-BM-Do7" firstAttribute="top" secondItem="aZP-0J-ucN" secondAttribute="bottom" constant="70" id="1jT-Se-aFx"/>
                             <constraint firstItem="Faa-xr-zJp" firstAttribute="trailing" secondItem="0dn-w7-kfz" secondAttribute="trailingMargin" id="3hZ-Bh-s42"/>
                             <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="77C-FW-hQF"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="Faa-xr-zJp" secondAttribute="bottom" constant="20" id="CHF-R3-CQD"/>
                             <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="DBE-Gk-KBy"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="Evo-3y-4E4"/>
+                            <constraint firstAttribute="trailing" secondItem="aAj-BM-Do7" secondAttribute="trailing" constant="-11" id="G2y-jD-GAq"/>
                             <constraint firstItem="4RA-fI-mSO" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leadingMargin" id="GwA-v0-xYI"/>
+                            <constraint firstAttribute="trailing" secondItem="eqd-hQ-7CK" secondAttribute="trailing" constant="-12" id="Npd-Yu-HkE"/>
+                            <constraint firstItem="aZP-0J-ucN" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="16" id="Sdg-0F-Ece"/>
+                            <constraint firstItem="eqd-hQ-7CK" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="12" id="Z8z-3k-NV9"/>
                             <constraint firstItem="jSJ-4x-A9W" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="iyi-py-vhK"/>
+                            <constraint firstItem="eqd-hQ-7CK" firstAttribute="top" secondItem="aAj-BM-Do7" secondAttribute="bottom" constant="4" id="jRN-9M-rcg"/>
+                            <constraint firstItem="aAj-BM-Do7" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="11" id="qKq-C1-Jq8"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="4RA-fI-mSO" secondAttribute="bottom" constant="20" id="xYY-fl-0tH"/>
                         </constraints>
                     </view>
@@ -464,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgk-vX-GzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250.7246376811595" y="-313.85869565217394"/>
+            <point key="canvasLocation" x="3250.4000000000001" y="-314.39280359820094"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="y9R-DZ-moj">
@@ -525,7 +544,7 @@
         <image name="fondo" width="750" height="1200"/>
         <image name="fondoLaunch" width="3680" height="2456"/>
         <image name="hombremujer" width="621" height="1104"/>
-        <image name="mujer" width="621" height="1104"/>
+        <image name="maria" width="737" height="1109"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RbJ-2V-2vx"/>

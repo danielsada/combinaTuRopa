@@ -46,8 +46,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
-    var titles = ["prueba","somb160","somb260"]
-    var camisas = ["blusa260","blusa160"]
+    var titles = [""]
+    var camisas = ["blusa1","blusa2", "blusa3"]
+    var pants = ["pantsm1", "pantsm2", "pantsm3"]
     
     @IBOutlet weak var pickerView: AKPickerView!
     override func viewDidLoad() {
@@ -71,10 +72,13 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
         if pickerView.tag == 1{
-            return self.titles.count
+            return 0
         }
         if pickerView.tag == 2{
             return self.camisas.count
+        }
+        if pickerView.tag == 3{
+            return self.pants.count
         }
         return 0
     }
@@ -91,10 +95,13 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     func pickerView(_ pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
         if pickerView.tag == 1{
-            return UIImage(named: self.titles[item])!
+            return UIImage(named: "fondo")!
         }
         if pickerView.tag == 2{
             return UIImage(named: self.camisas[item])!
+        }
+        if pickerView.tag == 3{
+            return UIImage(named: self.pants[item])!
         }
         return UIImage(named: "hombre")!
     }
