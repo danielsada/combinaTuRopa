@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -185,17 +185,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNc-uo-aBy">
-                                <rect key="frame" x="299" y="592" width="60" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="7wh-GR-0fu"/>
-                                    <constraint firstAttribute="height" constant="55" id="gyM-gt-VoW"/>
-                                </constraints>
-                                <state key="normal" image="camarablanca"/>
-                                <connections>
-                                    <action selector="buttonCamara:" destination="uCV-kj-rx4" eventType="touchUpInside" id="Hp4-sS-JcM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY0-2F-oew">
                                 <rect key="frame" x="16" y="592" width="60" height="55"/>
                                 <constraints>
@@ -238,14 +227,12 @@
                             <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="lY0-2F-oew" secondAttribute="bottom" constant="20" id="Zal-lr-fwP"/>
                             <constraint firstItem="dUy-bM-47b" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" constant="4" id="Zr8-uc-Ga6"/>
                             <constraint firstAttribute="trailing" secondItem="dUy-bM-47b" secondAttribute="trailing" constant="-4" id="ahb-M2-NZF"/>
-                            <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="pNc-uo-aBy" secondAttribute="bottom" constant="20" id="cHc-hy-avJ"/>
                             <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="PXB-zc-vYH" secondAttribute="bottom" id="dI6-hg-H6g"/>
                             <constraint firstItem="7qC-Iw-J3g" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" id="jbf-9r-1r1"/>
                             <constraint firstAttribute="trailing" secondItem="ZP0-ne-qXL" secondAttribute="trailing" constant="-4" id="mMy-o6-bYw"/>
                             <constraint firstAttribute="bottom" secondItem="7qC-Iw-J3g" secondAttribute="bottom" constant="20" id="qLg-hF-vdB"/>
                             <constraint firstItem="qAy-IZ-pY7" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" constant="4" id="vCD-JU-ZIz"/>
                             <constraint firstItem="lY0-2F-oew" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leadingMargin" id="xS2-L3-aeh"/>
-                            <constraint firstItem="pNc-uo-aBy" firstAttribute="trailing" secondItem="wo7-Pr-mDl" secondAttribute="trailingMargin" id="xn8-B7-4XP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -257,34 +244,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF7-Sa-jtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3234.4000000000001" y="571.66416791604206"/>
-        </scene>
-        <!--View Controller Tiendas-->
-        <scene sceneID="96p-vH-7RX">
-            <objects>
-                <tableViewController id="fsf-pm-RJf" customClass="ViewControllerTiendas" customModule="combinaTuRopa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dxk-fh-Uau">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" id="6bd-2P-Mkh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bd-2P-Mkh" id="T8C-aU-wDV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fsf-pm-RJf" id="ZsX-cl-fxk"/>
-                            <outlet property="delegate" destination="fsf-pm-RJf" id="j49-PI-WcZ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nRM-1Z-gve" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4862" y="-351"/>
         </scene>
         <!--View Controller Mapa-->
         <scene sceneID="UFQ-BV-NOc">
@@ -321,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57T-8M-mLL" id="zL8-MK-WJp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -376,17 +335,6 @@
                                 <rect key="frame" x="0.0" y="62" width="375" height="553"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faa-xr-zJp">
-                                <rect key="frame" x="299" y="592" width="60" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="LlM-6a-vaL"/>
-                                    <constraint firstAttribute="width" constant="60" id="fRo-WG-k2V"/>
-                                </constraints>
-                                <state key="normal" image="camarablanca"/>
-                                <connections>
-                                    <action selector="bottonCamara:" destination="Qbk-1e-XOz" eventType="touchUpInside" id="SUa-ZL-9QS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RA-fI-mSO">
                                 <rect key="frame" x="16" y="592" width="60" height="55"/>
                                 <constraints>
@@ -459,9 +407,7 @@
                         <constraints>
                             <constraint firstItem="aZP-0J-ucN" firstAttribute="top" secondItem="54J-NG-Wdz" secondAttribute="bottom" constant="8" id="1GM-S1-9OS"/>
                             <constraint firstItem="aAj-BM-Do7" firstAttribute="top" secondItem="aZP-0J-ucN" secondAttribute="bottom" constant="70" id="1jT-Se-aFx"/>
-                            <constraint firstItem="Faa-xr-zJp" firstAttribute="trailing" secondItem="0dn-w7-kfz" secondAttribute="trailingMargin" id="3hZ-Bh-s42"/>
                             <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="77C-FW-hQF"/>
-                            <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="Faa-xr-zJp" secondAttribute="bottom" constant="20" id="CHF-R3-CQD"/>
                             <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="DBE-Gk-KBy"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="Evo-3y-4E4"/>
                             <constraint firstAttribute="trailing" secondItem="aAj-BM-Do7" secondAttribute="trailing" constant="-11" id="G2y-jD-GAq"/>
@@ -485,38 +431,6 @@
             </objects>
             <point key="canvasLocation" x="3250.4000000000001" y="-314.39280359820094"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="y9R-DZ-moj">
-            <objects>
-                <viewController id="ZYs-hY-WkK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2xP-1E-738"/>
-                        <viewControllerLayoutGuide type="bottom" id="80Z-T7-hPf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jyv-7N-RB5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-2f-xO7">
-                                <rect key="frame" x="157.5" y="306" width="60" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="x9J-ls-3FQ"/>
-                                    <constraint firstAttribute="height" constant="55" id="ySH-FZ-9pR"/>
-                                </constraints>
-                                <state key="normal" image="camara"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="SY2-2f-xO7" firstAttribute="centerX" secondItem="Jyv-7N-RB5" secondAttribute="centerX" id="IS5-Io-EX0"/>
-                            <constraint firstItem="SY2-2f-xO7" firstAttribute="centerY" secondItem="Jyv-7N-RB5" secondAttribute="centerY" id="myJ-Cq-h9Z"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6gZ-ma-bVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4180" y="-290.10494752623691"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="q0H-C1-9LL">
             <objects>
@@ -538,8 +452,6 @@
     </scenes>
     <resources>
         <image name="andres" width="368" height="554"/>
-        <image name="camara" width="100" height="100"/>
-        <image name="camarablanca" width="100" height="100"/>
         <image name="cartblanca" width="100" height="100"/>
         <image name="fondo" width="750" height="1200"/>
         <image name="fondoLaunch" width="3680" height="2456"/>
@@ -547,6 +459,6 @@
         <image name="maria" width="737" height="1109"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RbJ-2V-2vx"/>
+        <segue reference="kWm-2q-qtt"/>
     </inferredMetricsTieBreakers>
 </document>
