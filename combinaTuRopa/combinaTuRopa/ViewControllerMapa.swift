@@ -12,9 +12,12 @@ import MapKit
 
 
 class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate,URLSessionDownloadDelegate{
+    var identifier = 0
     var tienda = ""
     var dir = ""
     var coordenadas = ""
+    var nameBrands = [String]()
+    var slogans = [String]()
     var arrAnnotation = [MKPointAnnotation]()
     let gps = CLLocationManager()
     var posicion = CLLocation()
@@ -30,8 +33,9 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         
         /*****/
-        descargarJsonTiendas()
+        descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/stores")
         /*****/
+        descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/brands")
         super.viewDidLoad()
         
     }
@@ -124,13 +128,14 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    func descargarJsonTiendas(){
-        let dir = "https://combinaturopa.stamplayapp.com/api/cobject/v1/stores"
+    func descargarJsonTiendas(dir: String){
+        //let dir = "https://combinaturopa.stamplayapp.com/api/cobject/v1/stores"
         if let url = URL(string: dir) {
             let config = URLSessionConfiguration.default
             let sesion = URLSession(configuration: config, delegate: self, delegateQueue: nil)
             let tareaTexto = sesion.downloadTask(with: url)
             tareaTexto.resume()
+            identifier+=1;
         }
     }
     
@@ -147,29 +152,42 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     func parsearJson(datos: Data){
-        var i = 0
-        if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
-            
-            if json["data"] != nil{
-                let items = json["data"] as! [[String:Any]]
-                for _ in items{
-                    let item = items[i]
-                    let geo = item["_geolocation"] as! [String:Any]
-                    let coord = geo["coordinates"] as! [Double]
-                    
-                    tienda = item["nombre"]! as! String
-                    dir = item["direccion"]! as! String
-                    agregarAnnotation(tienda: tienda, dir: dir, coor: coord)
-                    i+=1
+        if identifier == 1 {
+            var i = 0
+            if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
+                if json["data"] != nil{
+                    let items = json["data"] as! [[String:Any]]
+                    for _ in items{
+                        let item = items[i]
+                        let geo = item["_geolocation"] as! [String:Any]
+                        let coord = geo["coordinates"] as! [Double]
+                        tienda = item["nombre"]! as! String
+                        dir = item["direccion"]! as! String
+                        agregarAnnotation(tienda: tienda, dir: dir, coor: coord)
+                        i+=1
+                    }
+                }
+                else{
+                    let alerta = UIAlertController(title: "Aviso", message: "NO SE ENCONTRÓ LA TIENDA.", preferredStyle: .alert)
+                    let btnAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                    alerta.addAction(btnAceptar)
+                    present(alerta, animated: true, completion: nil)
+                }
+                configurarMapa()
+            }
+        }
+        else if identifier == 2 {
+            var i = 0
+            if let json=try? JSONSerialization.jsonObject(with: datos, options: .mutableContainers) as! [String:Any]{
+                if json["data"] != nil{
+                    let items = json["data"] as! [[String:Any]]
+                    for _ in items{
+                        let item = items[i]
+                        let name = item["name"] as! String
+                        let slogan = item["slogan"] as! String
+                    }
                 }
             }
-            else{
-                let alerta = UIAlertController(title: "Aviso", message: "NO SE ENCONTRÓ LA TIENDA.", preferredStyle: .alert)
-                let btnAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-                alerta.addAction(btnAceptar)
-                present(alerta, animated: true, completion: nil)
-            }
-            configurarMapa()
         }
         
     }
