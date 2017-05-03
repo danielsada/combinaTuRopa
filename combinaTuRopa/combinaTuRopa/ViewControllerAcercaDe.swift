@@ -38,6 +38,9 @@ class ViewcControllerAcercaDe: UIViewController {
         andresLabel.backgroundColor = UIColor(white:1,alpha:0.25)
     }
     @IBAction func btnJessica(_ sender: Any) {
+        
+    }
+    @IBAction func btnJess(_ sender: Any) {
         jessicaLabel.text = "Modelo"
         jessicaLabel.backgroundColor = UIColor(white:1,alpha:0.25)
     }
