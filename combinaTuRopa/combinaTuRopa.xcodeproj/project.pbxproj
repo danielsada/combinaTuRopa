@@ -146,7 +146,7 @@
 				TargetAttributes = {
 					E2404D3E1E510B35008C29B9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 57638P7TDE;
+						DevelopmentTeam = FKTXZ4VW2L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -319,10 +319,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57638P7TDE;
+				DEVELOPMENT_TEAM = FKTXZ4VW2L;
 				INFOPLIST_FILE = combinaTuRopa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team4.itesm.mx.combinaTuRopa;
+				PRODUCT_BUNDLE_IDENTIFIER = itesm.mx.ACV.combinaTuRopa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
@@ -333,10 +333,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57638P7TDE;
+				DEVELOPMENT_TEAM = FKTXZ4VW2L;
 				INFOPLIST_FILE = combinaTuRopa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team4.itesm.mx.combinaTuRopa;
+				PRODUCT_BUNDLE_IDENTIFIER = itesm.mx.ACV.combinaTuRopa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
