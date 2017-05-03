@@ -44,7 +44,24 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
  
     }
+    func adjustTop(size: CGSize) -> Int {
+        switch(size.width, size.height) {
+        case (320, 480):                        // iPhone 4S in portrait
+            return 20
+        case (320, 568):                        // iPhone 5/5S in portrait
+            return 24
+        case (375, 667):                        // iPhone 6 in portrait
+            return 50
+        case (414, 736):                        // iPhone 6 Plus in portrait
+            return 60
+        default:
+            print("W:\(size.width) H:\(size.height)")
+            return 76
+        }
+        
+    }
     
+    @IBOutlet weak var topPlayera: NSLayoutConstraint!
     
     //Nuevo Commit
     var titles = ["gorra1","gorra2","gorra1"]
@@ -57,6 +74,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        topPlayera.constant = CGFloat(adjustTop(size: UIScreen.main.bounds.size))
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerViewCuerpo.delegate = self
