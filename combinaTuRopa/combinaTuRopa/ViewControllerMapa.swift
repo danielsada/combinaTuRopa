@@ -67,19 +67,13 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         let name = nameBrands[indexPath.row]
         var i = 0
         print(mapa.annotations.count)
-        //var annotationToRemove = [MKPointAnnotation]()
-        //var annotationToADD = [MKPointAnnotation]()
         if name.contains("Mostrar todas"){
-            print("Me picaste")
             for ann in arrAnnotation{
                 mapa.addAnnotation(ann)
             }
         }
         else if mapa.annotations.count == 1{
-            //print(name)
-            //print(i)
-            for _ in arrAnnotation{
-                //print(arrAnnotation[i].title)
+                for _ in arrAnnotation{
                 if (arrAnnotation[i].title?.contains(name))!{
                     mapa.addAnnotation(arrAnnotation[i])
                 }
@@ -89,16 +83,14 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         else{
             for _ in arrAnnotation{
                 if !(arrAnnotation[i].title?.contains(name))!{
-                    //annotationToRemove.append()
                     mapa.removeAnnotation( arrAnnotation[i] )
+                }else{
+                    mapa.addAnnotation(arrAnnotation[i])
                 }
                 i+=1
             }
         }
     }
-    /*func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-    
-     }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
