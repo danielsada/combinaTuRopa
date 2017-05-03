@@ -32,7 +32,8 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     override func viewDidLoad() {
-        
+        nameBrands.append("Mostrar todas")
+        slogans.append(" ")
         /*****/
         descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/stores")
         /*****/
@@ -65,17 +66,38 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = nameBrands[indexPath.row]
         var i = 0
-        var annotationToRemove = [MKPointAnnotation]()
-        for _ in arrAnnotation{
-            if !(arrAnnotation[i].title?.contains(name))!{
-                annotationToRemove.append(arrAnnotation[i])
-                mapa.removeAnnotations( annotationToRemove )
+        print(mapa.annotations.count)
+        //var annotationToRemove = [MKPointAnnotation]()
+        //var annotationToADD = [MKPointAnnotation]()
+        if name.contains("Mostrar todas"){
+            print("Me picaste")
+            for ann in arrAnnotation{
+                mapa.addAnnotation(ann)
             }
-            i+=1
+        }
+        else if mapa.annotations.count == 1{
+            //print(name)
+            //print(i)
+            for _ in arrAnnotation{
+                //print(arrAnnotation[i].title)
+                if (arrAnnotation[i].title?.contains(name))!{
+                    mapa.addAnnotation(arrAnnotation[i])
+                }
+                i+=1
+            }
+        }
+        else{
+            for _ in arrAnnotation{
+                if !(arrAnnotation[i].title?.contains(name))!{
+                    //annotationToRemove.append()
+                    mapa.removeAnnotation( arrAnnotation[i] )
+                }
+                i+=1
+            }
         }
     }
     /*func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-     <#code#>
+    
      }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
