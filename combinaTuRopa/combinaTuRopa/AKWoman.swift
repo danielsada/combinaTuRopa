@@ -108,11 +108,11 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     // MARK: - AKPickerViewDelegate
     
-    func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
+    /*func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         if pickerView.tag == 1{
             print("Your favorite city is \(self.titles[item])")
         }
-    }
+    }*/
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
