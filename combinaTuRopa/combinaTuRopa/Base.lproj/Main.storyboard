@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Vm-II-hF2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Vm-II-hF2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -443,15 +443,15 @@
                         <constraints>
                             <constraint firstItem="aZP-0J-ucN" firstAttribute="top" secondItem="54J-NG-Wdz" secondAttribute="bottom" constant="8" id="1GM-S1-9OS"/>
                             <constraint firstItem="aAj-BM-Do7" firstAttribute="top" secondItem="aZP-0J-ucN" secondAttribute="bottom" constant="70" id="1jT-Se-aFx"/>
-                            <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="77C-FW-hQF"/>
-                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="DBE-Gk-KBy"/>
-                            <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="Evo-3y-4E4"/>
+                            <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="3mk-Nq-5oS"/>
                             <constraint firstAttribute="trailing" secondItem="aAj-BM-Do7" secondAttribute="trailing" constant="-11" id="G2y-jD-GAq"/>
                             <constraint firstItem="4RA-fI-mSO" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leadingMargin" id="GwA-v0-xYI"/>
+                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="JfX-Vx-PDG"/>
                             <constraint firstAttribute="trailing" secondItem="eqd-hQ-7CK" secondAttribute="trailing" constant="-12" id="Npd-Yu-HkE"/>
                             <constraint firstItem="aZP-0J-ucN" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="16" id="Sdg-0F-Ece"/>
                             <constraint firstItem="eqd-hQ-7CK" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="12" id="Z8z-3k-NV9"/>
-                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="iyi-py-vhK"/>
+                            <constraint firstItem="jSJ-4x-A9W" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="fpG-fP-Pec"/>
+                            <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="ht6-cr-xzm"/>
                             <constraint firstItem="eqd-hQ-7CK" firstAttribute="top" secondItem="aAj-BM-Do7" secondAttribute="bottom" constant="4" id="jRN-9M-rcg"/>
                             <constraint firstItem="aAj-BM-Do7" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="11" id="qKq-C1-Jq8"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="4RA-fI-mSO" secondAttribute="bottom" constant="20" id="xYY-fl-0tH"/>
@@ -712,6 +712,6 @@
         <image name="maria" width="737" height="1109"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kWm-2q-qtt"/>
+        <segue reference="RbJ-2V-2vx"/>
     </inferredMetricsTieBreakers>
 </document>

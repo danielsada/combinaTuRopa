@@ -12,6 +12,8 @@ import MapKit
 
 
 class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate,URLSessionDownloadDelegate{
+    let maxRange = 10000.0;
+    let reachability = Reachability()!
     var identifier = 0
     var tienda = ""
     var dir = ""
@@ -32,6 +34,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     override func viewDidLoad() {
+        monitorearRed()
         nameBrands.append("Mostrar todas")
         slogans.append(" ")
         /*****/
@@ -66,28 +69,29 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = nameBrands[indexPath.row]
         var i = 0
-        print(mapa.annotations.count)
         if name.contains("Mostrar todas"){
             for ann in arrAnnotation{
                 mapa.addAnnotation(ann)
             }
         }
-        else if mapa.annotations.count == 1{
-                for _ in arrAnnotation{
-                if (arrAnnotation[i].title?.contains(name))!{
-                    mapa.addAnnotation(arrAnnotation[i])
-                }
-                i+=1
-            }
-        }
         else{
             for _ in arrAnnotation{
-                if !(arrAnnotation[i].title?.contains(name))!{
-                    mapa.removeAnnotation( arrAnnotation[i] )
-                }else{
-                    mapa.addAnnotation(arrAnnotation[i])
+                if (arrAnnotation[i].title?.contains(name))!{                    let d = measure(lat1: posicion.coordinate.latitude,lon1: posicion.coordinate.longitude,lat2: arrAnnotation[i].coordinate.latitude,lon2: arrAnnotation[i].coordinate.longitude)
+                    if(d<maxRange){
+                        mapa.addAnnotation(arrAnnotation[i])
+                        //print(d)
+                    }else{
+                        mapa.removeAnnotation(arrAnnotation[i])
+                    }
                 }
+                else{
+                    mapa.removeAnnotation(arrAnnotation[i])
+                    }
                 i+=1
+            }
+            //print(mapa.annotations.count)
+            if (mapa.annotations.count==1){
+                mostrarAlerta(mensaje:"No hay tiendas cercanas \n Prueba otra marca")
             }
         }
     }
@@ -121,7 +125,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
      func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let posicion = userLocation.location!
+        self.posicion = userLocation.location!
         mapa.setCenter(posicion.coordinate, animated: true)
     }
     
@@ -139,7 +143,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.posicion = locations.last!
+        //self.posicion = locations.last!
         //Tamaño inicial del mapa
         
     }
@@ -201,12 +205,11 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
             else{
-                let alerta = UIAlertController(title: "Aviso", message: "NO SE ENCONTRÓ LA TIENDA.", preferredStyle: .alert)
-                let btnAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-                alerta.addAction(btnAceptar)
-                present(alerta, animated: true, completion: nil)
+                mostrarAlerta(mensaje: "No se encontró la tienda")
             }
-            configurarMapa()
+            DispatchQueue.main.async{
+                self.configurarMapa()
+            }
             descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/brands")
         }
         
@@ -236,6 +239,51 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func monitorearRed(){
+        reachability.whenReachable={
+            reachibility in
+            DispatchQueue.main.async {
+                if self.reachability.isReachableViaWiFi{
+                    print("Conectado WIFI")
+                }
+                else{
+                    print("Conectado 4G")
+                }
+            }
+        }
+        reachability.whenUnreachable = {
+            reachability in
+            DispatchQueue.main.async {
+                print("Sin conexión")
+            }
+        }
+        do{
+            try reachability.startNotifier()
+        }
+        catch{
+            print("error en el motiroreo de red")
+        }
+    }
+    
+    func measure(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double{  // generally used geo measurement function
+        let R = 6378.137; // Radius of earth in KM
+        let dLat = lat2 * Double.pi / 180 - lat1 * Double.pi / 180
+        let dLon = lon2 * Double.pi / 180 - lon1 * Double.pi / 180
+        let a = sin(dLat/2) * sin(dLat/2) +
+            cos(lat1 * Double.pi / 180) * cos(lat2 * Double.pi / 180) *
+            sin(dLon/2) * sin(dLon/2)
+        let c = 2 * atan2(sqrt(a), sqrt(1-a))
+        let d = R * c
+        return d * 1000 // meters
+    }
+    
+    func mostrarAlerta(mensaje: String){
+        let alerta = UIAlertController(title: "Aviso", message: mensaje, preferredStyle: .alert)
+        let btnAceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alerta.addAction(btnAceptar)
+        present(alerta, animated: true, completion: nil)
+    }
+
     
 
 }
