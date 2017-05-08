@@ -51,13 +51,27 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
-    var sombreros = [""]
-    var camisas = ["blusa1","blusa2", "blusa3"]
-    var pants = ["pantsm1", "pantsm2", "pantsm3"]
+    var sombreros = [String]() // zapatos
+    var camisas = [String]()
+    var pants = [String]()
     
     @IBOutlet weak var pickerView: AKPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for index in 1...9{
+            camisas.append("blusa"+String(index))
+        }
+        for index in 1...9{
+            pants.append("pantsm"+String(index))
+        }
+        for index in 1...6{
+            zapatos.append("zapatosm"+String(index))
+        }
+
+        
+        
+        
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerViewCuerpo.delegate = self

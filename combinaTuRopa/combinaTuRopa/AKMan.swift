@@ -67,15 +67,14 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var topPlayera: NSLayoutConstraint!
     
     //Nuevo Commit
-    var titles = ["gorra1","gorra2","gorra1"]
-    var camisas = ["playera1","playera2","playera3"]
-    var pantalones = ["pants1","pants2"]
-    
+    var titles = [String]()
+    var camisas = [String]()
+    var pantalones = [String]()
+    var zapatos = [String]()
     var pantalon = ""
     var camisa = ""
     var gorra = ""
-    var zapatos = ""
-
+    var zapato = ""
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
     @IBOutlet weak var pickerView: AKPickerView!
@@ -83,6 +82,18 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        for index in 1...6{
+            titles.append("gorra"+String(index))
+        }
+        for index in 1...10{
+            camisas.append("playera"+String(index))
+        }
+        for index in 1...7{
+            pantalones.append("pants"+String(index))
+        }
+        for index in 1...6{
+            zapatos.append("zapatos"+String(index))
+        }
         topPlayera.constant = CGFloat(adjustTop(size: UIScreen.main.bounds.size))
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
@@ -111,6 +122,9 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         else if pickerView.tag==3{
             return self.pantalones.count
         }
+        else if pickerView.tag==4{
+            return self.zapatos.count
+        }
         return 0
     }
 
@@ -132,6 +146,9 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
         else if pickerView.tag==3{
             return UIImage(named: self.pantalones[item])!
+        }
+        else if pickerView.tag==4{
+            return UIImage(named: self.zapatos[item])!
         }
         return UIImage(named: "hombre")!
     }
