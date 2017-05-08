@@ -25,8 +25,22 @@ class ViewcControllerTuOutfit: UIViewController {
     
     @IBOutlet weak var piernasLbl: UILabel!
  
+    @IBOutlet weak var botonVerTiendas: UIButton!
+    
+    func animatedButton(){
+        botonVerTiendas.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.20, initialSpringVelocity: 4.0, options: .allowUserInteraction, animations: {
+            self.botonVerTiendas.transform = .identity
+        }) { (finished) in
+            self.animatedButton()
+        }
+        
+        
+    }
     
     override func viewDidLoad() {
+        animatedButton()
         print(gorra)
         print(pantalon)
         print(camisa)

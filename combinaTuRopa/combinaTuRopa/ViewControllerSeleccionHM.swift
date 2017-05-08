@@ -12,43 +12,45 @@ import UIKit
 class ViewControllerSeleccionHM: UIViewController{
     //Boton Mujer
     @IBAction func botonMujer(_ sender: Any) {
-        let button = sender as! UIButton
-        let bounds = button.bounds
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 30, options: .curveEaseInOut, animations: {
-            button.bounds = CGRect(x: bounds.origin.x - 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 20)
-        }) { (success:Bool) in
-            if success == true {
-                UIView.animate(withDuration: 0.5, animations: {
-                    button.bounds = bounds
-                })
-                
-            }
-        }
-
     }
     
     //Boton Hombre
     @IBAction func botonHombre(_ sender: Any) {
-        let button = sender as! UIButton
-        let bounds = button.bounds
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 30, options: .curveEaseInOut, animations: {
-            button.bounds = CGRect(x: bounds.origin.x + 10, y: bounds.origin.y, width : bounds.size.width + 60, height: bounds.size.height + 20)
-        }) { (success:Bool) in
-            if success == true {
-                UIView.animate(withDuration: 0.5, animations: { 
-                    button.bounds = bounds
-                })
-                
-            }
-        }
 
     }
+
+    @IBOutlet weak var btnMujer: UIButton!
+    
+    @IBOutlet weak var btnHombre: UIButton!
+    
+    //Animated Button
+    func animatedButton(){
+        btnHombre.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        btnMujer.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .allowUserInteraction, animations: {
+            self.btnHombre.transform = .identity
+        }) { (finished) in
+            self.animatedButton()
+        }
+        
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .allowUserInteraction, animations: {
+            self.btnMujer.transform = .identity
+        }) { (finished) in
+            self.animatedButton()
+        }
+
+        
+        
+    }
+    
     
     //Only portrait
+    
+    override func viewDidLoad(){
+        animatedButton()
+        
+    }
  
-    
-    
-    
+
 }
