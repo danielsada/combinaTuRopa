@@ -28,28 +28,22 @@ class ViewControllerSeleccionHM: UIViewController{
         btnHombre.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         btnMujer.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .allowUserInteraction, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.50, initialSpringVelocity: 4.0, options: .allowUserInteraction, animations: {
             self.btnHombre.transform = .identity
-        }) { (finished) in
-            self.animatedButton()
-        }
-        
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .allowUserInteraction, animations: {
             self.btnMujer.transform = .identity
         }) { (finished) in
             self.animatedButton()
         }
 
-        
-        
     }
+    
     
     
     //Only portrait
     
     override func viewDidLoad(){
         animatedButton()
-        
+    
     }
  
 

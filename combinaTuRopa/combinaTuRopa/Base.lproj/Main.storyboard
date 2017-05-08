@@ -284,6 +284,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLU-EK-iaR">
+                                <rect key="frame" x="125" y="583" width="124" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Ver Tiendas">
+                                    <color key="titleColor" red="0.90419844627085311" green="0.96330128205128207" blue="0.49639246039915264" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TXk-L3-fEb" kind="show" id="s4A-tu-i7N"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabeza:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-p5-4gK">
                                 <rect key="frame" x="16" y="72" width="343" height="37"/>
                                 <color key="backgroundColor" red="0.15072115384615381" green="0.15072115384615381" blue="0.15072115384615381" alpha="0.52992995689655176" colorSpace="calibratedRGB"/>
@@ -340,16 +350,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLU-EK-iaR">
-                                <rect key="frame" x="125" y="583" width="124" height="64"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Ver Tiendas">
-                                    <color key="titleColor" red="0.90419844627085311" green="0.96330128205128207" blue="0.49639246039915264" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="TXk-L3-fEb" kind="show" id="Wt2-gK-Zdd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86234897375106812" green="0.6895606517791748" blue="0.52823787927627563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
