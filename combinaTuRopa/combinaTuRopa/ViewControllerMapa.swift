@@ -38,7 +38,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
         nameBrands.append("Mostrar todas")
         slogans.append(" ")
         /*****/
-        descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/stores")
+        descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/stores?per_page=250")
         /*****/
         
         super.viewDidLoad()
@@ -210,7 +210,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
             DispatchQueue.main.async{
                 self.configurarMapa()
             }
-            descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/brands")
+            descargarJsonTiendas(dir:"https://combinaturopa.stamplayapp.com/api/cobject/v1/brands?per_page=250")
         }
         
     }
