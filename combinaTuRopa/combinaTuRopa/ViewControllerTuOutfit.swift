@@ -16,9 +16,15 @@ class ViewcControllerTuOutfit: UIViewController {
     var zapato = ""
     
     @IBOutlet weak var zapatosLbl: UILabel!
-    @IBOutlet weak var troncoInferiorLbl: UILabel!
-    @IBOutlet weak var troncoSuperiorLbl: UILabel!
+    
     @IBOutlet weak var cabezaLbl: UILabel!
+    
+    @IBOutlet weak var troncoSuperiorLbl: UILabel!
+ 
+    @IBOutlet weak var piernas: UILabel!
+    
+    @IBOutlet weak var piernasLbl: UILabel!
+ 
     
     override func viewDidLoad() {
         print(gorra)
@@ -27,7 +33,7 @@ class ViewcControllerTuOutfit: UIViewController {
         
         cabezaLbl.text = gorra
         troncoSuperiorLbl.text = camisa
-        troncoInferiorLbl.text = pantalon
+        piernasLbl.text = pantalon
         zapatosLbl.text = zapato
     }
 }

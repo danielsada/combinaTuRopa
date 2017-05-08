@@ -13,10 +13,6 @@ import UIKit
 
 class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
-    var pantalon = ""
-    var camisa = ""
-    var gorra = ""
-    var zapatos = ""
     let segundoControlador: ViewcControllerTuOutfit = ViewcControllerTuOutfit()
     
     //Bonton Carrito
@@ -75,6 +71,12 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     var camisas = ["playera1","playera2","playera3"]
     var pantalones = ["pants1","pants2"]
     
+    var pantalon = ""
+    var camisa = ""
+    var gorra = ""
+    var zapatos = ""
+
+    
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
     @IBOutlet weak var pickerView: AKPickerView!
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
@@ -124,7 +126,6 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     func pickerView(_ pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
         if pickerView.tag == 1{
             return UIImage(named: self.titles[item])!
-            
         }
         if pickerView.tag == 2{
             return UIImage(named: self.camisas[item])!
@@ -132,35 +133,22 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         else if pickerView.tag==3{
             return UIImage(named: self.pantalones[item])!
         }
-
         return UIImage(named: "hombre")!
     }
     
     // MARK: - AKPickerViewDelegate
     
-    func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
-        if pickerView.tag == 1{
-            print("Your favorite city is \(self.titles[item])")
-        }
-        if pickerView.tag == 2{
-            print("Your favorite city is \(self.camisas[item])")
-        }
-        else if pickerView.tag==3{
-            print("Your favorite city is \(self.pantalones[item])")
-        }
-        
-    }
+    /*func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int)
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "showDetail"){
             let segundoControlador = segue.destination as! ViewcControllerTuOutfit
-            gorra = titles[(pickerView.selectedItem)]
-            camisa = camisas[(pickerViewCuerpo.selectedItem)]
-            pantalon = pantalones[(pickerViewPiernas.selectedItem)]
-            segundoControlador.gorra = gorra
-            segundoControlador.camisa = camisa
-            segundoControlador.pantalon = pantalon
+            
+            segundoControlador.gorra = titles[pickerView.selectedItem]
+            segundoControlador.camisa = camisas[pickerViewCuerpo.selectedItem]
+            segundoControlador.pantalon = pantalones[pickerViewPiernas.selectedItem]
         }
     }
     

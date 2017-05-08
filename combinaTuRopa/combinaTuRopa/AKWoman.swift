@@ -13,7 +13,7 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     var camisa = ""
     var pantalon = ""
-    var gorra = ""
+    var gorra = "hi"
     var zapatos = ""
     
     //Boton Carrito
@@ -51,7 +51,7 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
-    var titles = [""]
+    var sombreros = [""]
     var camisas = ["blusa1","blusa2", "blusa3"]
     var pants = ["pantsm1", "pantsm2", "pantsm3"]
     
@@ -115,24 +115,27 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     /*func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         if pickerView.tag == 1{
-            print("Your favorite city is \(self.titles[item])")
+            //self.title[item])
+        }
+        else if pickerView.tag==2{
+            camisa = camisas[item]
+        }
+        else if pickerView.tag==3{
+            pantalon = pants[item]
         }
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if(segue.identifier == "showDetailWoman"){
-            let segundoControlador = segue.destination as! ViewControllerTuOutfitMujer
-            gorra = titles[(pickerView.selectedItem)]
-            camisa = camisas[(pickerViewCuerpo.selectedItem)]
-            pantalon = pants[(pickerViewPiernas.selectedItem)]
-            segundoControlador.gorra = gorra
-            segundoControlador.camisa = camisa
-            segundoControlador.pantalon = pantalon
+        if(segue.identifier == "showDetail"){
+            let segundoControlador = segue.destination as! ViewcControllerTuOutfit
+          
+            segundoControlador.camisa = camisas[pickerViewCuerpo.selectedItem]
+            segundoControlador.pantalon = pants[pickerViewPiernas.selectedItem]
         }
+
     }
-    
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // println("\(scrollView.contentOffset.x)")
     }
