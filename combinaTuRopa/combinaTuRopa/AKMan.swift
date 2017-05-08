@@ -13,6 +13,12 @@ import UIKit
 
 class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
+    var pantalon = ""
+    var camisa = ""
+    var gorra = ""
+    var zapatos = ""
+    let segundoControlador: ViewcControllerTuOutfit = ViewcControllerTuOutfit()
+    
     //Bonton Carrito
     @IBAction func buttonShop(_ sender: Any) {
         let button = sender as! UIButton
@@ -27,6 +33,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
                 })
             }
         }
+        //prepare(for: <#T##UIStoryboardSegue#>, sender: <#T##Any?#>)
     }
     //Bonton Camara
     @IBAction func buttonCamara(_ sender: Any) {
@@ -104,7 +111,6 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
         return 0
     }
-    
 
     /*
      func pickerView(_ pickerView: AKPickerView, titleForItem item: Int) -> String {
@@ -118,6 +124,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     func pickerView(_ pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
         if pickerView.tag == 1{
             return UIImage(named: self.titles[item])!
+            
         }
         if pickerView.tag == 2{
             return UIImage(named: self.camisas[item])!
@@ -134,6 +141,26 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         if pickerView.tag == 1{
             print("Your favorite city is \(self.titles[item])")
+        }
+        if pickerView.tag == 2{
+            print("Your favorite city is \(self.camisas[item])")
+        }
+        else if pickerView.tag==3{
+            print("Your favorite city is \(self.pantalones[item])")
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "showDetail"){
+            let segundoControlador = segue.destination as! ViewcControllerTuOutfit
+            gorra = titles[(pickerView.selectedItem)]
+            camisa = camisas[(pickerViewCuerpo.selectedItem)]
+            pantalon = pantalones[(pickerViewPiernas.selectedItem)]
+            segundoControlador.gorra = gorra
+            segundoControlador.camisa = camisa
+            segundoControlador.pantalon = pantalon
         }
     }
     

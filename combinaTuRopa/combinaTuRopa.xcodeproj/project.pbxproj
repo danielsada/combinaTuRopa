@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */; };
+		2651265B1EBFEB9F00062159 /* ViewControllerTuOutfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651265A1EBFEB9F00062159 /* ViewControllerTuOutfit.swift */; };
+		2651265D1EC0036A00062159 /* ViewControllerTuOutfitMujer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2651265C1EC0036A00062159 /* ViewControllerTuOutfitMujer.swift */; };
 		77A3200B1EB9640D00C99EBB /* ViewControllerAcercaDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3200A1EB9640D00C99EBB /* ViewControllerAcercaDe.swift */; };
 		77DAF1A81E82F33A00668EE4 /* ViewControllerTiendas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */; };
 		77DAF1AB1E82F84F00668EE4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAF1AA1E82F84F00668EE4 /* CoreLocation.framework */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		0929CACB1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSeleccionHM.swift; sourceTree = "<group>"; };
+		2651265A1EBFEB9F00062159 /* ViewControllerTuOutfit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTuOutfit.swift; sourceTree = "<group>"; };
+		2651265C1EC0036A00062159 /* ViewControllerTuOutfitMujer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTuOutfitMujer.swift; sourceTree = "<group>"; };
 		77A3200A1EB9640D00C99EBB /* ViewControllerAcercaDe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAcercaDe.swift; sourceTree = "<group>"; };
 		77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTiendas.swift; sourceTree = "<group>"; };
 		77DAF1AA1E82F84F00668EE4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -110,6 +114,8 @@
 				77DAF1A71E82F33A00668EE4 /* ViewControllerTiendas.swift */,
 				77DAF1AC1E82F94200668EE4 /* ViewControllerMapa.swift */,
 				77A3200A1EB9640D00C99EBB /* ViewControllerAcercaDe.swift */,
+				2651265A1EBFEB9F00062159 /* ViewControllerTuOutfit.swift */,
+				2651265C1EC0036A00062159 /* ViewControllerTuOutfitMujer.swift */,
 			);
 			path = combinaTuRopa;
 			sourceTree = "<group>";
@@ -193,9 +199,11 @@
 				E2404D431E510B35008C29B9 /* AppDelegate.swift in Sources */,
 				D087A4161E8086B700C0F9A9 /* AKMan.swift in Sources */,
 				0929CACC1E80E32900C5DE4D /* ViewControllerSeleccionHM.swift in Sources */,
+				2651265D1EC0036A00062159 /* ViewControllerTuOutfitMujer.swift in Sources */,
 				D05F65841E807664009E886E /* AKWoman.swift in Sources */,
 				D019EFC81EBC31FE00892DF8 /* Reachability.swift in Sources */,
 				77DAF1A81E82F33A00668EE4 /* ViewControllerTiendas.swift in Sources */,
+				2651265B1EBFEB9F00062159 /* ViewControllerTuOutfit.swift in Sources */,
 				D05F65821E80760F009E886E /* AKPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

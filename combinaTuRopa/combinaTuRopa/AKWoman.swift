@@ -11,6 +11,11 @@ import UIKit
 
 class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
+    var camisa = ""
+    var pantalon = ""
+    var gorra = ""
+    var zapatos = ""
+    
     //Boton Carrito
     @IBAction func buttonShop(_ sender: Any) {
         let button = sender as! UIButton
@@ -113,6 +118,19 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
             print("Your favorite city is \(self.titles[item])")
         }
     }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "showDetailWoman"){
+            let segundoControlador = segue.destination as! ViewControllerTuOutfitMujer
+            gorra = titles[(pickerView.selectedItem)]
+            camisa = camisas[(pickerViewCuerpo.selectedItem)]
+            pantalon = pants[(pickerViewPiernas.selectedItem)]
+            segundoControlador.gorra = gorra
+            segundoControlador.camisa = camisa
+            segundoControlador.pantalon = pantalon
+        }
+    }
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
