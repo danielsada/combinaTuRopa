@@ -23,7 +23,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
     var arrAnnotation = [MKPointAnnotation]()
     let gps = CLLocationManager()
     var posicion = CLLocation()
-    let direcciones: ViewControllerTiendas = ViewControllerTiendas()
+    //let direcciones: ViewControllerTiendas = ViewControllerTiendas()
     
     @IBOutlet weak var tiendaLabel: UILabel!
     @IBOutlet weak var imagenMapa: UIImageView!
