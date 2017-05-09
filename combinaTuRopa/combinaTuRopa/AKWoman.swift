@@ -55,7 +55,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     var zapatos = [String]() // zapatos
     var camisas = [String]()
     var pants = [String]()
-    
+    let descCamisas = ["Blusa tipo G color carmesí","Blusa tipo H color blaco","Sudadera con acabado color negro","Blusa tipo J color azul","Blusa tipo WI color verde","Blusa tipo RT color azul","Blusa tipo R color naranja","Sudadera con acabado tipo JS color blanco","Blusa con escote color negro"]
+    let descPantalones = ["Falda corta tipo J color carmesí","Jeans ASY color azul","Pants BYS color negro","Falda tipo CJ color rojo","Falda tipo CX color violeta","Falda tipo RA color verde","Falda YU color morado","Falda IPSO color rosa","Pants con acabado color blanco"]
+    let descZapatos = ["Tennis KIS color gris","Tennis HJK color aguamarina","Tennis RFT color negro","Tennis RMJ color rosa","Tennis JM color morado","Tenis MABD color blanco"]
     
     @IBOutlet weak var pickerView: AKPickerView!
     override func viewDidLoad() {
@@ -155,9 +157,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         if(segue.identifier == "showDetail"){
             let segundoControlador = segue.destination as! ViewcControllerTuOutfit
           
-            segundoControlador.camisa = camisas[pickerViewCuerpo.selectedItem]
-            segundoControlador.pantalon = pants[pickerViewPiernas.selectedItem]
-            segundoControlador.zapato = zapatos[pickerViewPies.selectedItem]
+            segundoControlador.camisa = descCamisas[pickerViewCuerpo.selectedItem]
+            segundoControlador.pantalon = descPantalones[pickerViewPiernas.selectedItem]
+            segundoControlador.zapato = descZapatos[pickerViewPies.selectedItem]
         }
 
     }

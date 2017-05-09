@@ -78,6 +78,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     let descTitles = ["Gorra estilo M color Rojo","Gorra estilo J color Gris","Gorra estilo E color Rosa","Gorra estilo B color Verde","Gorra estilo A color Azul","Gorra estilo D color Amarillo"]
     let descCamisas = ["Playera tipo Q sin acabado color azul","Playera tipo Q con acabado color azul","Playera tipo BY color cielo","Playera tipo BYA color aguamarina","Playera tipo CT color violeta","Playera tipo B color rosa","Playera tipo M color naranja","Playera X con acabado color verde","Playera Z con acabado color morado","Player sin cuello tipo JHK color oro"]
     let descPantalones = ["Jeans fit color azul","Pants con acabado color gris","Jeans X color aguamarina","Jeans E color café","Jeans I color morado","Jeans SS color verde","Jeans SASA color violeta"]
+    let descZapatos = ["Tennis blancos con franjas amarillas tipo VYS","Tennis blancos con franjas naranjas tipo PYS","Tennis blancos con franjas violetas tipo AZY","Tennis blancos con franjas azules tipo MIS","Tennis azules con franjas amarillas tipo LOC","Tennis rosas con franjas azules tipo AD2"]
     
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
     @IBOutlet weak var pickerView: AKPickerView!
@@ -177,6 +178,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
             segundoControlador.gorra = descTitles[pickerView.selectedItem]
             segundoControlador.camisa = descCamisas[pickerViewCuerpo.selectedItem]
             segundoControlador.pantalon = descPantalones[pickerViewPiernas.selectedItem]
+            segundoControlador.zapato = descZapatos[pickerViewPies.selectedItem]
         }
     }
     
