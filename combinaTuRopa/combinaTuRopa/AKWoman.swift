@@ -13,8 +13,8 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     var camisa = ""
     var pantalon = ""
-    var gorra = "hi"
-    var zapatos = ""
+    var gorra = ""
+    var zapato = ""
     
     //Boton Carrito
     @IBAction func buttonShop(_ sender: Any) {
@@ -50,10 +50,12 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
     
+    @IBOutlet weak var pickerViewPies: AKPickerView!
     @IBOutlet weak var pickerViewPiernas: AKPickerView!
-    var sombreros = [String]() // zapatos
+    var zapatos = [String]() // zapatos
     var camisas = [String]()
     var pants = [String]()
+    
     
     @IBOutlet weak var pickerView: AKPickerView!
     override func viewDidLoad() {
@@ -69,22 +71,25 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
             zapatos.append("zapatosm"+String(index))
         }
 
-        
-        
-        
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerViewCuerpo.delegate = self
         self.pickerViewCuerpo.dataSource = self
         self.pickerViewPiernas.delegate = self
         self.pickerViewPiernas.dataSource = self
+        self.pickerViewPies.delegate = self
+        self.pickerViewPies.dataSource = self
         
-       
-        self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
-        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue", size: 20)!
         self.pickerView.pickerViewStyle = .wheel
+        self.pickerViewCuerpo.pickerViewStyle = .wheel
+        self.pickerViewPiernas.pickerViewStyle = .wheel
+        self.pickerViewPies.pickerViewStyle = .wheel
         self.pickerView.maskDisabled = false
         self.pickerView.reloadData()
+        self.pickerViewCuerpo.reloadData()
+        self.pickerViewPiernas.reloadData()
+        self.pickerViewPies.reloadData()
+
     }
     
     // MARK: - AKPickerViewDataSource
@@ -98,6 +103,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
         if pickerView.tag == 3{
             return self.pants.count
+        }
+        if pickerView.tag == 4{
+            return self.zapatos.count
         }
         return 0
     }
@@ -121,6 +129,9 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         }
         if pickerView.tag == 3{
             return UIImage(named: self.pants[item])!
+        }
+        if pickerView.tag==4{
+            return UIImage(named: self.zapatos[item])!
         }
         return UIImage(named: "hombre")!
     }
@@ -146,6 +157,7 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
           
             segundoControlador.camisa = camisas[pickerViewCuerpo.selectedItem]
             segundoControlador.pantalon = pants[pickerViewPiernas.selectedItem]
+            segundoControlador.zapato = zapatos[pickerViewPies.selectedItem]
         }
 
     }
