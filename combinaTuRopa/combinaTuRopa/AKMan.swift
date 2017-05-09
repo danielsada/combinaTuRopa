@@ -87,16 +87,16 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var pickerViewPies: AKPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 1...6{
+        for index in 0...6{
             titles.append("gorra"+String(index))
         }
-        for index in 1...10{
+        for index in 0...10{
             camisas.append("playera"+String(index))
         }
-        for index in 1...7{
+        for index in 0...7{
             pantalones.append("pants"+String(index))
         }
-        for index in 1...6{
+        for index in 0...6{
             zapatos.append("zapatos"+String(index))
         }
         topPlayera.constant = CGFloat(adjustTop(size: UIScreen.main.bounds.size))

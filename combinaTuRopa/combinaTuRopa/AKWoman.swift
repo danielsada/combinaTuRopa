@@ -63,13 +63,13 @@ class AKWoman: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for index in 1...9{
+        for index in 0...9{
             camisas.append("blusa"+String(index))
         }
-        for index in 1...9{
+        for index in 0...9{
             pants.append("pantsm"+String(index))
         }
-        for index in 1...6{
+        for index in 0...6{
             zapatos.append("zapatosm"+String(index))
         }
 
