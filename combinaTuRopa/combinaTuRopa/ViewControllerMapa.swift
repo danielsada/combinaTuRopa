@@ -91,7 +91,7 @@ class ViewControllerMapa: UIViewController, UITableViewDataSource, UITableViewDe
             }
             //print(mapa.annotations.count)
             if (mapa.annotations.count==1){
-                mostrarAlerta(mensaje:"No hay tiendas cercanas \n Prueba otra marca")
+                mostrarAlerta(mensaje:"No hay tiendas cercanas. \n Prueba otra marca.")
             }
         }
     }

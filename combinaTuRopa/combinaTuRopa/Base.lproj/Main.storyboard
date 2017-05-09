@@ -181,9 +181,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mXH-0p-5Hy" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="11" y="568" width="343" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view opaque="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXH-0p-5Hy" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="11" y="568" width="354" height="57"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
                                         <real key="value" value="20"/>
@@ -236,12 +235,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mXH-0p-5Hy" firstAttribute="top" secondItem="dUy-bM-47b" secondAttribute="bottom" constant="8" id="0MO-Ux-NyK"/>
+                            <constraint firstAttribute="trailing" secondItem="mXH-0p-5Hy" secondAttribute="trailing" constant="10" id="0zZ-Tz-vaj"/>
                             <constraint firstItem="PXB-zc-vYH" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" id="83A-wG-fYw"/>
                             <constraint firstAttribute="trailing" secondItem="PXB-zc-vYH" secondAttribute="trailing" id="BRi-d8-gJg"/>
+                            <constraint firstItem="mXH-0p-5Hy" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" constant="11" id="EkK-e5-R2h"/>
                             <constraint firstItem="7qC-Iw-J3g" firstAttribute="top" secondItem="wo7-Pr-mDl" secondAttribute="top" constant="50" id="Hyk-3C-IVX"/>
                             <constraint firstAttribute="trailing" secondItem="7qC-Iw-J3g" secondAttribute="trailing" constant="10" id="L8B-ll-URo"/>
                             <constraint firstItem="ZP0-ne-qXL" firstAttribute="leading" secondItem="wo7-Pr-mDl" secondAttribute="leading" constant="4" id="QyJ-la-ALN"/>
                             <constraint firstItem="dUy-bM-47b" firstAttribute="top" secondItem="qAy-IZ-pY7" secondAttribute="bottom" constant="-4" id="Rr7-rf-C7s"/>
+                            <constraint firstItem="LvA-p8-beX" firstAttribute="top" secondItem="mXH-0p-5Hy" secondAttribute="bottom" constant="42" id="TwL-kd-hhO"/>
                             <constraint firstItem="ZP0-ne-qXL" firstAttribute="top" secondItem="ZWO-eE-Mrq" secondAttribute="bottom" constant="8" id="VDX-Sb-gkG"/>
                             <constraint firstItem="PXB-zc-vYH" firstAttribute="top" secondItem="wo7-Pr-mDl" secondAttribute="top" id="Vpe-Te-I31"/>
                             <constraint firstItem="qAy-IZ-pY7" firstAttribute="top" secondItem="ZP0-ne-qXL" secondAttribute="bottom" constant="47" id="VvP-u9-Yj4"/>
@@ -261,6 +264,7 @@
                         <outlet property="pickerView" destination="ZP0-ne-qXL" id="fUq-Pq-qb8"/>
                         <outlet property="pickerViewCuerpo" destination="qAy-IZ-pY7" id="ZzL-AE-K7t"/>
                         <outlet property="pickerViewPiernas" destination="dUy-bM-47b" id="roZ-iK-5YN"/>
+                        <outlet property="pickerViewPies" destination="mXH-0p-5Hy" id="fY5-5a-H4l"/>
                         <outlet property="topPlayera" destination="VvP-u9-Yj4" id="hQ5-wL-Jeg"/>
                     </connections>
                 </viewController>
@@ -308,7 +312,7 @@
                                 <color key="textColor" red="0.94241585260000005" green="0.99568023589999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tronco inferior:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDk-oZ-F73">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piernas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDk-oZ-F73">
                                 <rect key="frame" x="16" y="296" width="343" height="51"/>
                                 <color key="backgroundColor" red="0.15072115380000001" green="0.15072115380000001" blue="0.15072115380000001" alpha="0.5299299569" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -444,18 +448,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57T-8M-mLL" id="zL8-MK-WJp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ScQ-H1-Zyw">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S6F-aA-aOb">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -545,18 +549,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vxv-P9-a6d" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
-                                <rect key="frame" x="16" y="527" width="343" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
-                                        <real key="value" value="1000"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-BM-Do7" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
                                 <rect key="frame" x="11" y="199" width="375" height="139"/>
                                 <constraints>
@@ -585,6 +577,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view opaque="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxv-P9-a6d" customClass="AKPickerView" customModule="combinaTuRopa" customModuleProvider="target">
+                                <rect key="frame" x="12" y="552" width="358" height="57"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="viewDepth">
+                                        <real key="value" value="1000"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -593,6 +596,7 @@
                             <constraint firstItem="krW-8g-rnh" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="2WV-IG-M4t"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="jSJ-4x-A9W" secondAttribute="bottom" id="3mk-Nq-5oS"/>
                             <constraint firstAttribute="trailing" secondItem="krW-8g-rnh" secondAttribute="trailing" id="65P-rH-gln"/>
+                            <constraint firstItem="Vxv-P9-a6d" firstAttribute="top" secondItem="eqd-hQ-7CK" secondAttribute="bottom" constant="8" id="Cjs-44-kLq"/>
                             <constraint firstAttribute="trailing" secondItem="aAj-BM-Do7" secondAttribute="trailing" constant="-11" id="G2y-jD-GAq"/>
                             <constraint firstItem="4RA-fI-mSO" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leadingMargin" id="GwA-v0-xYI"/>
                             <constraint firstItem="jSJ-4x-A9W" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" id="JfX-Vx-PDG"/>
@@ -600,10 +604,13 @@
                             <constraint firstItem="aZP-0J-ucN" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="16" id="Sdg-0F-Ece"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="krW-8g-rnh" secondAttribute="bottom" constant="52" id="Yhi-op-pZJ"/>
                             <constraint firstItem="eqd-hQ-7CK" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="12" id="Z8z-3k-NV9"/>
+                            <constraint firstItem="Vxv-P9-a6d" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="12" id="b4b-GO-yWZ"/>
                             <constraint firstItem="jSJ-4x-A9W" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" id="fpG-fP-Pec"/>
                             <constraint firstAttribute="trailing" secondItem="jSJ-4x-A9W" secondAttribute="trailing" id="ht6-cr-xzm"/>
                             <constraint firstItem="eqd-hQ-7CK" firstAttribute="top" secondItem="aAj-BM-Do7" secondAttribute="bottom" constant="4" id="jRN-9M-rcg"/>
                             <constraint firstItem="krW-8g-rnh" firstAttribute="top" secondItem="0dn-w7-kfz" secondAttribute="top" constant="62" id="jU0-7j-SVe"/>
+                            <constraint firstAttribute="trailing" secondItem="Vxv-P9-a6d" secondAttribute="trailing" constant="5" id="kuu-TN-sgT"/>
+                            <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="Vxv-P9-a6d" secondAttribute="bottom" constant="58" id="mXA-K5-mVa"/>
                             <constraint firstItem="aAj-BM-Do7" firstAttribute="leading" secondItem="0dn-w7-kfz" secondAttribute="leading" constant="11" id="qKq-C1-Jq8"/>
                             <constraint firstItem="lgl-j7-bIi" firstAttribute="top" secondItem="4RA-fI-mSO" secondAttribute="bottom" constant="20" id="xYY-fl-0tH"/>
                         </constraints>
@@ -612,6 +619,7 @@
                         <outlet property="pickerView" destination="aZP-0J-ucN" id="hcv-1n-PTW"/>
                         <outlet property="pickerViewCuerpo" destination="aAj-BM-Do7" id="Uip-gl-4Ze"/>
                         <outlet property="pickerViewPiernas" destination="eqd-hQ-7CK" id="vcS-gn-C2s"/>
+                        <outlet property="pickerViewPies" destination="Vxv-P9-a6d" id="nC2-SX-lUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgk-vX-GzN" userLabel="First Responder" sceneMemberID="firstResponder"/>

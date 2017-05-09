@@ -83,6 +83,7 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
     @IBOutlet weak var pickerView: AKPickerView!
     @IBOutlet weak var pickerViewCuerpo: AKPickerView!
    
+    @IBOutlet weak var pickerViewPies: AKPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         for index in 1...6{
@@ -104,13 +105,20 @@ class AKMan: UIViewController,AKPickerViewDataSource, AKPickerViewDelegate{
         self.pickerViewCuerpo.dataSource = self
         self.pickerViewPiernas.delegate = self
         self.pickerViewPiernas.dataSource = self
+        self.pickerViewPies.dataSource = self
+        self.pickerViewPies.delegate = self
 
         
-        self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
-        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue", size: 20)!
+        
         self.pickerView.pickerViewStyle = .wheel
+        self.pickerViewCuerpo.pickerViewStyle = .wheel
+        self.pickerViewPiernas.pickerViewStyle = .wheel
+        self.pickerViewPies.pickerViewStyle = .wheel
         self.pickerView.maskDisabled = false
         self.pickerView.reloadData()
+        self.pickerViewCuerpo.reloadData()
+        self.pickerViewPiernas.reloadData()
+        self.pickerViewPies.reloadData()
     }
     
     // MARK: - AKPickerViewDataSource
